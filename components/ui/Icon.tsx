@@ -60,6 +60,7 @@ import {
   ApCarGear,
   ApEyeRays,
   ApMountainFlag,
+  ApSedan,
   ApTimingBelt,
   ApUsersStars,
 } from "@/components/ui/customIcons";
@@ -73,6 +74,7 @@ const icons: Record<string, IconType> = {
   ApCarGear,
   ApEyeRays,
   ApMountainFlag,
+  ApSedan,
   ApTimingBelt,
   ApUsersStars,
   FaCalendarDays,

@@ -10,13 +10,13 @@ import { buttonArrow, buttonClass } from "@/components/ui/buttonStyles";
 
 /** Fields are a navy icon and the text on a grey line (no box), like the design */
 const base =
-  "w-full appearance-none rounded-none border-0 border-b-2 border-[var(--color-border-field)] bg-transparent pl-12 pr-3 font-display text-[1rem] text-[var(--color-ink-soft)] outline-none transition-colors placeholder:text-[var(--color-ink-soft)] focus:border-[var(--color-orange)] lg:border-b-[0.125rem] lg:pl-[4.69rem] lg:pr-[1rem] lg:text-[1.625rem]";
+  "w-full appearance-none rounded-none border-0 border-b-2 border-[var(--color-border-field)] bg-transparent pl-12 pr-3 font-display text-[1rem] text-[var(--color-ink-soft)] font-medium outline-none transition-colors placeholder:text-[var(--color-ink-soft)] focus:border-[var(--color-orange)] lg:border-b-[0.125rem] lg:pl-[4.69rem] lg:pr-[1rem] lg:text-[1.58rem]";
 const field = `${base} h-14 lg:h-[3.75rem]`;
 const iconClass = "pointer-events-none absolute left-1 size-6 text-[var(--color-navy)] lg:left-[0.8rem] lg:size-[2.6rem]";
 
 const Field = ({ name, type = "text", field: data, autoComplete }: { name: string; type?: string; field: FormField; autoComplete?: string }) => (
   <label className="relative flex items-center">
-    <Icon name={data.icon} className={iconClass} strokeWidth={1.6} />
+    <Icon name={data.icon} className={iconClass} strokeWidth={2} />
     <input name={name} type={type} required placeholder={data.placeholder} aria-label={data.placeholder} autoComplete={autoComplete} className={field} />
   </label>
 );
@@ -27,7 +27,7 @@ const DateField = ({ name, field: data }: { name: string; field: FormField }) =>
 
   return (
     <label className="relative flex items-center">
-      <Icon name={data.icon} className={iconClass} strokeWidth={1.6} />
+      <Icon name={data.icon} className={iconClass} strokeWidth={2} />
       <input
         name={name}
         type={type}
@@ -66,7 +66,7 @@ type SelectProps = {
 
 const SelectField = ({ name, field: data, options, value, onChange }: SelectProps) => (
   <label className="relative flex items-center">
-    <Icon name={data.icon} className={iconClass} strokeWidth={1.6} />
+    <Icon name={data.icon} className={iconClass} strokeWidth={2} />
     <select
       name={name}
       {...(onChange ? { value, onChange: (event: React.ChangeEvent<HTMLSelectElement>) => onChange(event.target.value) } : { defaultValue: "" })}
@@ -106,7 +106,7 @@ export const BookingForm = ({ data, serviceOptions }: { data: BookingData; servi
       onSubmit={submit.onSubmit}
       onInput={submit.onInput}
       aria-busy={submit.sending}
-      className="mt-10 grid gap-x-10 gap-y-4 sm:grid-cols-2 lg:mt-[4.6rem] lg:gap-x-[5.19rem] lg:gap-y-[2.28rem]"
+      className="mt-10 grid gap-x-10 gap-y-4 sm:grid-cols-2 lg:mt-[5.2rem] lg:gap-x-[5.19rem] lg:gap-y-[2.28rem]"
     >
       <Field name="name" field={fields.name} autoComplete="name" />
       <Field name="phone" type="tel" field={fields.phone} autoComplete="tel" />
@@ -115,13 +115,13 @@ export const BookingForm = ({ data, serviceOptions }: { data: BookingData; servi
       <SelectField name="service" field={fields.service} options={serviceOptions} value={service} onChange={setService} />
       <SelectField name="time" field={fields.time} options={data.timeOptions} />
       <label className="relative block sm:col-span-2">
-        <Icon name={fields.message.icon} className={`${iconClass} top-4 lg:top-[0.85rem]`} strokeWidth={1.6} />
+        <Icon name={fields.message.icon} className={`${iconClass} top-4 lg:top-[0.85rem]`} strokeWidth={2} />
         <textarea
           name="message"
           rows={3}
           placeholder={fields.message.placeholder}
           aria-label={fields.message.placeholder}
-          className={`${base} h-28 resize-none pt-4 lg:h-[9.5rem] lg:pt-[0.95rem]`}
+          className={`${base} h-28 resize-none pt-4 lg:h-[7.45rem] lg:pt-[0.95rem]`}
         />
       </label>
       {submit.showMessage ? (

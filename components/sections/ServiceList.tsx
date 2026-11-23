@@ -31,7 +31,7 @@ export const ServiceList = ({ data }: { data: ServicesData }) => {
                 }`}
               >
                 <Icon name={item.icon} className="size-9 shrink-0 lg:size-[3.5rem]" strokeWidth={1.6} />
-                <span className="ml-4 font-sans text-[1.05rem] font-bold leading-tight lg:ml-[1.6rem] lg:text-[1.4375rem]">{item.title}</span>
+                <span className="ml-4 font-sans text-[1.05rem] font-bold leading-tight lg:ml-[1.6rem] lg:text-[1.335rem]">{item.title}</span>
                 <Icon
                   name="TbArrowRight"
                   className="ml-auto size-5 shrink-0 transition-transform duration-300 group-hover:translate-x-1 lg:size-[1.9rem]"

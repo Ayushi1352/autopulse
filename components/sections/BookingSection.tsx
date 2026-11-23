@@ -18,14 +18,15 @@ export const BookingSection = ({ data, serviceOptions }: Props) => {
   return (
     <section id={data.id} className={`bg-[var(--color-bg-main)] ${scrollMargin} ${sectionSpace}`}>
       <div className={`${sidePadding} lg:px-[5.94rem]`}>
-        <div className="mx-auto max-w-[44rem] rounded-[1.75rem] bg-[var(--color-bg-form)] px-5 py-10 sm:px-10 sm:py-12 lg:max-w-none lg:rounded-[2rem] lg:px-0 lg:pb-[2.6rem] lg:pl-[4.19rem] lg:pr-[3.56rem] lg:pt-[2rem]">
-          <div data-reveal className="text-center">
+        <div className="mx-auto max-w-[44rem] rounded-[1.75rem] px-5 py-10 sm:px-10 sm:py-12 lg:max-w-none lg:rounded-[2rem] lg:px-0 lg:pb-[2.6rem] lg:pl-[4.19rem] lg:pr-[3.56rem] lg:pt-[2rem]">
+          {/* the design centres this heading 20px left of the form's middle */}
+          <div data-reveal className="text-center lg:pr-[2.5rem]">
             <div className="flex items-center justify-center gap-4 text-[var(--color-orange)] lg:gap-0">
               {line}
-              <Icon name={data.icon} className="size-16 sm:size-20 lg:mx-[3.3rem] lg:size-[10.5rem] lg:-my-[2.6rem]" />
+              <Icon name={data.icon} className="h-12 w-28 sm:h-14 sm:w-32 lg:mx-[3.3rem] lg:h-[4.25rem] lg:w-[10.3rem]" />
               {line}
             </div>
-            <h2 className={`mt-2 font-heading font-extrabold tracking-[-0.01em] text-[var(--color-ink)] ${titleSize} lg:mt-[1.5rem] lg:text-[4.1rem] lg:leading-none`}>
+            <h2 className={`mt-2 font-heading font-extrabold tracking-[-0.01em] text-[var(--color-ink)] ${titleSize} lg:-mt-[0.4rem] lg:text-[4.1rem] lg:leading-none`}>
               <TitleWords data={data} />
             </h2>
             <p className={`mx-auto mt-4 max-w-[36rem] font-display text-[var(--color-text-soft)] ${introSize} lg:mt-[1.6rem] lg:max-w-none lg:text-[1.66rem] lg:leading-none`}>

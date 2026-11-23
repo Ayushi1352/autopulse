@@ -25,24 +25,24 @@ export const Footer = async ({ data, company }: { data?: FooterData; company: Co
   const copyright = fill(data.copyrightText, { year: await currentYear() });
 
   return (
-    <footer className="bg-[var(--color-navy-footer)] px-4 pb-6 pt-12 text-center text-[var(--color-white)] sm:px-6 md:px-8 lg:px-[8.75rem] lg:pb-[1.3rem] lg:pt-[2.4rem]">
+    <footer className="bg-[var(--color-navy-footer)] px-4 pb-6 pt-12 text-center text-[var(--color-white)] sm:px-6 md:px-8 lg:px-[8.75rem] lg:pb-[2.1rem] lg:pt-[1.69rem]">
       <a href={data.logoUrl} aria-label={data.homeLabel} className="inline-block">
         <Image
-          src={company.logoLight}
+          src={data.logo}
           alt={company.logoAlt}
-          width={company.logoWidth}
-          height={company.logoHeight}
+          width={data.logoWidth}
+          height={data.logoHeight}
           quality={90}
-          sizes="(min-width: 1024px) 21vw, 240px"
-          className="h-auto w-[13rem] sm:w-[15rem] lg:w-[24.375rem]"
+          sizes="(min-width: 1024px) 23vw, 240px"
+          className="h-auto w-[15rem] sm:w-[17rem] lg:w-[27.5rem]"
         />
       </a>
       {/* the design's line breaks (\n in the JSON) are kept from 1024px up */}
-      <p className="mx-auto mt-5 max-w-[34rem] font-footer text-[0.95rem] leading-[1.6] text-[var(--color-white)] sm:text-base lg:mt-[1.2rem] lg:max-w-none lg:whitespace-pre-line lg:text-[1.6rem] lg:leading-[2.5rem]">
+      <p className="mx-auto mt-5 max-w-[34rem] font-footer text-[0.95rem] leading-[1.6] text-[var(--color-white)] sm:text-base lg:-mt-[0.125rem] lg:max-w-none lg:whitespace-pre-line lg:text-[1.885rem] lg:leading-[2.5rem]">
         {data.description}
       </p>
 
-      <nav aria-label={data.navLabel} className="mt-7 lg:mt-[2.4rem]">
+      <nav aria-label={data.navLabel} className="mt-7 lg:mt-[2.6rem]">
         <ul className="flex flex-wrap items-center justify-center gap-x-4 gap-y-3 sm:gap-x-6 lg:gap-x-[2.75rem]">
           {data.links.map((link, index) => (
             <Fragment key={link.id}>
@@ -60,7 +60,7 @@ export const Footer = async ({ data, company }: { data?: FooterData; company: Co
         </ul>
       </nav>
 
-      <ul aria-label={data.socialLabel} className="mt-8 flex justify-center gap-3 lg:mt-[3.95rem] lg:gap-[1.47rem]">
+      <ul aria-label={data.socialLabel} className="mt-8 flex justify-center gap-3 lg:mt-[5.14rem] lg:gap-[1.47rem]">
         {company.socialLinks.map((link) => (
           <li key={link.id}>
             <a
@@ -70,19 +70,19 @@ export const Footer = async ({ data, company }: { data?: FooterData; company: Co
               aria-label={link.label}
               className="grid size-11 place-items-center rounded-lg border-2 border-[var(--color-white-80)] text-[var(--color-white)] transition-colors duration-300 hover:border-[var(--color-orange)] hover:bg-[var(--color-orange)] lg:size-[4.44rem] lg:rounded-[0.75rem] lg:border-[0.125rem]"
             >
-              <Icon name={link.icon} className="size-5 lg:size-[2.3rem]" />
+              <Icon name={link.icon} className="size-5 lg:size-[2.65rem]" />
             </a>
           </li>
         ))}
       </ul>
 
-      <div aria-hidden="true" className="mt-8 flex items-center gap-4 lg:mt-[2.2rem] lg:gap-[1.8rem]">
+      <div aria-hidden="true" className="mt-8 flex items-center gap-4 lg:mt-[1.45rem] lg:gap-[1.8rem]">
         <FadeLine />
         <Icon name="FaCar" className="size-9 shrink-0 text-[var(--color-orange-bright)] lg:size-[4.5rem]" />
         <FadeLine toLeft />
       </div>
 
-      <p className="mt-4 font-footer text-[0.9rem] text-[var(--color-white)] sm:text-[0.95rem] lg:mt-[1.4rem] lg:text-[1.625rem] lg:leading-none">{copyright}</p>
+      <p className="mt-4 font-footer text-[0.9rem] text-[var(--color-white)] sm:text-[0.95rem] lg:mt-[0.65rem] lg:text-[1.93rem] lg:leading-none">{copyright}</p>
     </footer>
   );
 };

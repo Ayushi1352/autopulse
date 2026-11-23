@@ -20,7 +20,7 @@ export const AboutSection = ({ data }: { data?: AboutData }) => {
           Photos: every piece is placed in % of this block (the design's 895 × 734 area) and the card's text is sized
           in % of its width (cqw), so the whole group keeps the design's layout on every screen.
         */}
-        <div data-reveal className="relative aspect-[895/734] w-full shrink-0 [container-type:inline-size] order-2 lg:order-1 lg:mt-[0.94rem] lg:w-[55.94rem]">
+        <div data-reveal className="relative aspect-[895/734] w-full shrink-0 [container-type:inline-size] order-2 lg:order-1 lg:w-[55.94rem]">
           <div className="absolute left-[11.955%] top-0 h-full w-[54.64%] overflow-hidden rounded-[2.2cqw]">
             <Image src={data.image} alt={data.imageAlt} fill quality={95} sizes="(min-width: 1024px) 26vw, (min-width: 640px) 24rem, 52vw" className="object-cover object-center" />
           </div>
@@ -29,16 +29,16 @@ export const AboutSection = ({ data }: { data?: AboutData }) => {
           </div>
           {/* the orange dots sit over the edge of the tall photo, like in the design */}
           <DotGrid className="pointer-events-none absolute inset-0 size-full text-[var(--color-orange)]" />
-          <div className="absolute left-[42.23%] top-[62.26%] flex h-[21.8%] w-[48.04%] items-center gap-[2.8cqw] rounded-[1.8cqw] bg-[var(--color-white)] pl-[4.13cqw] shadow-[0_1.2cqw_3cqw_-1.2cqw_var(--color-shadow-strong)]">
-            <Icon name={data.experienceIcon} className="size-[11cqw] shrink-0 text-[var(--color-orange)]" />
+          <div className="absolute left-[42.23%] top-[62.26%] flex h-[21.8%] w-[48.04%] items-center gap-[2.1cqw] rounded-[1.8cqw] bg-[var(--color-white)] pl-[3.35cqw] shadow-[0_1.2cqw_3cqw_-1.2cqw_var(--color-shadow-strong)]">
+            <Icon name={data.experienceIcon} className="w-[13.5cqw] shrink-0 text-[var(--color-orange)]" />
             <p className="flex flex-col">
               <span className="font-heading text-[6.9cqw] font-extrabold leading-none text-[var(--color-ink)]">{data.experienceValue}</span>
-              <span className="mt-[1.1cqw] whitespace-nowrap font-sans text-[2.7cqw] font-semibold leading-none text-[var(--color-ink)]">{data.experienceText}</span>
+              <span className="mt-[1.1cqw] whitespace-nowrap font-sans text-[2.57cqw] font-semibold leading-none text-[var(--color-ink)]">{data.experienceText}</span>
             </p>
           </div>
         </div>
 
-        <div className="min-w-0 order-1 lg:order-2 lg:ml-[3.75rem] lg:w-[55rem] lg:pt-[0.69rem]">
+        <div className="min-w-0 order-1 lg:order-2 lg:ml-[3.75rem] lg:w-[55rem]">
           <div data-reveal>
             <Eyebrow
               label={data.label}
@@ -51,7 +51,7 @@ export const AboutSection = ({ data }: { data?: AboutData }) => {
             <h2 className={`mt-4 font-heading font-extrabold tracking-[-0.01em] text-[var(--color-ink)] sm:whitespace-pre-line ${titleSize} lg:mt-[0.63rem] lg:text-[3.42rem] lg:leading-[4.19rem] lg:tracking-[-0.016em]`}>
               {data.title}
             </h2>
-            <p className="mt-5 font-sans text-base font-medium leading-[1.65] text-[var(--color-text)] sm:text-lg lg:mt-[1.08rem] lg:whitespace-pre-line lg:text-[1.6rem] lg:leading-[2.22rem]">
+            <p className="mt-5 font-sans text-base font-medium leading-[1.65] text-[var(--color-text)] sm:text-lg lg:mt-[1.08rem] lg:whitespace-pre-line lg:text-[1.5rem] lg:leading-[2.22rem]">
               {data.description}
             </p>
           </div>

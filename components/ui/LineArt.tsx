@@ -12,7 +12,7 @@ const dotRows = [342.4, 368.5, 396.2, 423.7, 450.5];
 export const DotGrid = ({ className }: ArtProps) => (
   <svg viewBox="0 0 895 734" aria-hidden="true" className={`overflow-visible ${className ?? ""}`}>
     <g fill="currentColor">
-      {dotRows.flatMap((cy) => dotColumns.map((cx) => <circle key={`${cx}-${cy}`} cx={cx} cy={cy} r="2.1" />))}
+      {dotRows.flatMap((cy) => dotColumns.map((cx) => <circle key={`${cx}-${cy}`} cx={cx} cy={cy} r="2.6" />))}
     </g>
   </svg>
 );

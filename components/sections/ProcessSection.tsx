@@ -19,8 +19,8 @@ export const ProcessSection = ({ data }: { data?: ProcessData }) => {
     <section id={data.id} className={`relative bg-[var(--color-bg-main)] ${scrollMargin} ${sectionSpaceBottom}`}>
       <div className="relative overflow-hidden bg-[var(--color-navy-process)] pb-36 pt-16 sm:pb-40 sm:pt-20 lg:pb-[12.75rem] lg:pt-[9.75rem]">
         {/* the workshop photo under a navy layer: darker on the left behind the text, clearer on the right */}
-        <div className="absolute inset-y-0 right-0 w-full [mask-image:linear-gradient(to_left,black_45%,transparent)] lg:w-[60%]">
-          <Image src={data.image} alt={data.imageAlt} fill quality={75} sizes="(min-width: 1024px) 60vw, 100vw" className="object-cover object-[center_30%]" />
+        <div className="absolute inset-0">
+          <Image src={data.image} alt={data.imageAlt} fill quality={75} sizes="100vw" className="object-cover object-[center_30%]" />
         </div>
         <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-[var(--color-process-overlay)] via-[var(--color-process-overlay)] to-[var(--color-process-overlay-soft)]" />
 
@@ -32,15 +32,15 @@ export const ProcessSection = ({ data }: { data?: ProcessData }) => {
             gapClassName="gap-4 lg:gap-[1.25rem]"
           />
           <h2 className={`mt-3 font-heading font-extrabold tracking-[-0.01em] text-[var(--color-white)] ${titleSize} lg:mt-[1.35rem] lg:text-[3.73rem] lg:leading-none`}>{data.title}</h2>
-          <p className={`mx-auto mt-4 max-w-[40rem] font-sans text-[var(--color-white)] ${introSize} lg:mt-[0.85rem] lg:max-w-none lg:text-[1.92rem] lg:leading-none`}>{data.description}</p>
+          <p className={`mx-auto mt-4 max-w-[40rem] font-sans text-[var(--color-white)] ${introSize} lg:mt-[0.85rem] lg:max-w-none lg:text-[1.8rem] lg:font-medium lg:leading-none`}>{data.description}</p>
         </div>
 
-        <ol className={`relative mx-auto mt-12 grid max-w-[44rem] gap-8 ${sidePadding} sm:gap-10 lg:mt-[2.75rem] lg:flex lg:max-w-none lg:items-center lg:gap-0 lg:pl-[3.44rem] lg:pr-[1.25rem]`}>
+        <ol className={`relative mx-auto mt-12 grid max-w-[44rem] gap-8 ${sidePadding} sm:gap-10 lg:mt-[3.31rem] lg:flex lg:max-w-none lg:items-center lg:gap-0 lg:pl-[3.44rem] lg:pr-[1.25rem]`}>
           {data.steps.map((step, index) => (
             <Fragment key={step.id}>
               {index > 0 && (
                 <li aria-hidden="true" className="hidden shrink-0 text-[var(--color-orange)] lg:-ml-[0.3rem] lg:mr-[1.55rem] lg:block">
-                  <Icon name="TbChevronRight" className="size-[2.9rem]" strokeWidth={3} />
+                  <Icon name="TbChevronRight" className="size-[3.6rem]" strokeWidth={3.4} />
                 </li>
               )}
               <li data-reveal data-reveal-delay={index * 120} className={`group flex items-center ${stepWidths[index] ?? ""} lg:shrink-0`}>
@@ -51,9 +51,9 @@ export const ProcessSection = ({ data }: { data?: ProcessData }) => {
                 </span>
                 <span aria-hidden="true" className="ml-4 h-16 w-px shrink-0 bg-[var(--color-white-80)] lg:ml-[1rem] lg:h-[6.25rem] lg:w-[0.1rem]" />
                 <div className="ml-4 min-w-0 lg:ml-[1.75rem]">
-                  <h3 className="font-sans text-[1.2rem] font-bold leading-tight tracking-[-0.02em] text-[var(--color-white)] lg:whitespace-nowrap lg:text-[1.875rem] lg:leading-none lg:tracking-[-0.03em]">{step.title}</h3>
+                  <h3 className="font-sans text-[1.2rem] font-extrabold leading-tight tracking-[-0.02em] text-[var(--color-white)] lg:whitespace-nowrap lg:text-[1.65rem] lg:leading-none lg:tracking-[-0.03em]">{step.title}</h3>
                   {/* the design's line breaks (\n in the JSON) are kept from 640px up */}
-                  <p className="mt-1.5 font-sans text-[0.95rem] leading-[1.55] text-[var(--color-white-90)] sm:whitespace-pre-line sm:text-base lg:mt-[0.8rem] lg:whitespace-pre lg:text-[1.45rem] lg:leading-[2.2rem] lg:tracking-[-0.02em]">
+                  <p className="mt-1.5 font-sans text-[0.95rem] leading-[1.55] text-[var(--color-white-90)] sm:whitespace-pre-line sm:text-base lg:mt-[0.65rem] lg:whitespace-pre lg:text-[1.4rem] lg:font-medium lg:leading-[2.2rem] lg:tracking-[-0.025em]">
                     {step.text}
                   </p>
                 </div>
@@ -80,8 +80,8 @@ export const ProcessSection = ({ data }: { data?: ProcessData }) => {
             >
               <Icon name={stat.icon} className="size-12 shrink-0 sm:size-14 lg:size-[5.6rem]" strokeWidth={1.8} />
               <p className="flex flex-col">
-                <span className="font-sans text-[1.75rem] font-extrabold leading-none lg:text-[2.5rem]">{stat.value}</span>
-                <span className="mt-1 font-sans text-[0.9rem] font-medium leading-tight sm:text-base lg:mt-[0.5rem] lg:whitespace-nowrap lg:text-[1.6rem] lg:leading-none">{stat.label}</span>
+                <span className="font-sans text-[1.75rem] font-extrabold leading-none lg:text-[2.575rem]">{stat.value}</span>
+                <span className="mt-1 font-sans text-[0.9rem] font-medium leading-tight sm:text-base lg:mt-[0.5rem] lg:whitespace-nowrap lg:text-[1.5rem] lg:leading-none">{stat.label}</span>
               </p>
             </li>
           ))}

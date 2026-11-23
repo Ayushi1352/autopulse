@@ -48,6 +48,9 @@
       ]
     },
     "Footer": {
+      "logo": "/images/autopulse-logo-footer.webp",
+      "logoWidth": 440,
+      "logoHeight": 182,
       "logoUrl": "#home",
       "homeLabel": "AutoPulse — back to top",
       "description": "Your trusted partner for complete car care, maintenance, and repair services\nwith quality, transparency, and expert support.",
@@ -302,6 +305,7 @@
               "titleEnd": "Advantage",
               "description": "We go beyond just car repairs — we deliver trust, quality, and a hassle-free service experience.",
               "image": "/images/why-mechanic-car-v2.webp",
+              "imageDesktop": "/images/why-mechanic-car-desktop.webp",
               "imageAlt": "Smiling AutoPulse mechanic with folded arms in front of a grey car",
               "points": [
                 {
@@ -454,6 +458,7 @@
               "titleTop": "Find Answers To The Most\nCommon",
               "titleAccent": "Customer Queries",
               "image": "/images/faq-thinking-man-v2.webp",
+              "imageDesktop": "/images/faq-thinking-man-desktop.webp",
               "imageAlt": "Thoughtful man choosing between a row of cars",
               "items": [
                 {
@@ -494,6 +499,7 @@
               "titleAccent": "Support?",
               "description": "Reach out to our team for service booking,\nquick assistance, or any inquiries.",
               "image": "/images/contact-support-v2.webp",
+              "imageDesktop": "/images/contact-support-desktop-v2.webp",
               "imageAlt": "Smiling AutoPulse support agent with a headset at her desk",
               "items": [
                 {
@@ -525,7 +531,7 @@
           "variants": {
             "AutomotiveBooking1": {
               "id": "book",
-              "icon": "PiCarProfile",
+              "icon": "ApSedan",
               "titleTop": "Book a",
               "titleAccent": "Service",
               "description": "Fill in your details to schedule your car service appointment.",

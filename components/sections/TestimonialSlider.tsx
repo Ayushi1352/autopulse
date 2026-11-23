@@ -23,8 +23,8 @@ const Card = ({ item, ratingLabel, featured, className = "" }: CardProps) => (
   <figure
     className={`relative flex-col rounded-[1.75rem] px-6 pb-7 sm:px-8 lg:rounded-[1.875rem] lg:pb-[2.3rem] lg:pl-[3.31rem] lg:pr-[2rem] ${
       featured
-        ? "border-b-[0.6rem] border-[var(--color-orange)] bg-[var(--color-navy-deep)] pt-14 text-[var(--color-white)] shadow-[0_1.5rem_2.5rem_-1.5rem_var(--color-shadow-strong)] lg:min-h-[29.69rem] lg:border-b-[0.75rem] lg:pt-[5.6rem]"
-        : "border border-[var(--color-border)] bg-[var(--color-white)] pt-7 text-[var(--color-text)] shadow-[0_1.2rem_2.5rem_-1.6rem_var(--color-shadow-strong)] lg:min-h-[28.625rem] lg:pt-[2.5rem]"
+        ? "border-b-[0.6rem] border-[var(--color-orange)] bg-[var(--color-navy-deep)] pt-14 text-[var(--color-white)] shadow-[0_1.5rem_2.5rem_-1.5rem_var(--color-shadow-strong)] lg:min-h-[29.69rem] lg:border-b-[0.75rem] lg:pl-[4.25rem] lg:pt-[5.6rem]"
+        : "border border-[var(--color-border)] bg-[var(--color-white)] pt-7 text-[var(--color-text)] shadow-[0_0.6rem_1.8rem_-0.4rem_rgba(3,10,31,0.18)] lg:min-h-[28.625rem] lg:pr-[2.25rem] lg:pt-[2.5rem]"
     } ${className}`}
   >
     {featured ? (
@@ -36,14 +36,14 @@ const Card = ({ item, ratingLabel, featured, className = "" }: CardProps) => (
     )}
     {/* the design's line breaks (\n in the JSON) are kept from 1024px up */}
     <blockquote
-      className={`font-sans text-base leading-[1.6] sm:text-[1.05rem] lg:whitespace-pre-line lg:text-[1.55rem] lg:leading-[2.4rem] lg:tracking-[-0.01em] ${featured ? "" : "mt-1 lg:-mt-[0.4rem]"}`}
+      className={`font-quote text-[1.1rem] leading-[1.5] sm:text-[1.2rem] lg:whitespace-pre-line ${featured ? "lg:text-[2rem] lg:leading-[2.47rem]" : "mt-1 lg:-mt-[0.4rem] lg:text-[1.89rem] lg:leading-[2.4rem]"}`}
     >
-      {item.highlight && <strong className="font-bold">{item.highlight} </strong>}
+      {item.highlight && <strong className="font-normal">{item.highlight} </strong>}
       {item.quote}
     </blockquote>
     <span aria-hidden="true" className={`mt-6 block h-px lg:mt-[1.85rem] ${featured ? "bg-[var(--color-white-50)]" : "bg-[var(--color-divider-light)]"}`} />
     <figcaption className="mt-5 flex items-center gap-5 lg:mt-[1.3rem] lg:gap-[2.375rem]">
-      <span className="relative size-20 shrink-0 overflow-hidden rounded-full border-[0.19rem] border-[var(--color-orange)] bg-[var(--color-white)] p-[0.2rem] lg:size-[8.125rem]">
+      <span className="relative size-20 shrink-0 overflow-hidden rounded-full border-[0.19rem] border-[var(--color-orange)] bg-[var(--color-white)] p-[0.2rem] lg:size-[8.125rem] lg:border-[0.25rem]">
         <span className="relative block size-full overflow-hidden rounded-full">
           <Image src={item.image} alt={item.name} fill quality={90} sizes="(min-width: 1024px) 7vw, 80px" className="object-cover object-[center_30%]" />
         </span>
@@ -52,7 +52,7 @@ const Card = ({ item, ratingLabel, featured, className = "" }: CardProps) => (
         <span className={`block font-heading text-[1.2rem] font-extrabold leading-tight lg:text-[1.58rem] lg:leading-none ${featured ? "" : "text-[var(--color-ink)]"}`}>
           {item.name}
         </span>
-        <span className={`mt-1 block font-sans text-[0.95rem] lg:mt-[0.75rem] lg:text-[1.43rem] lg:leading-none ${featured ? "text-[var(--color-white-90)]" : "text-[var(--color-text-muted)]"}`}>
+        <span className={`mt-1 block font-quote text-[1.05rem] lg:mt-[0.75rem] lg:text-[1.6rem] lg:leading-none ${featured ? "text-[var(--color-white-90)]" : "text-[var(--color-text-muted)]"}`}>
           {item.location}
         </span>
         <span className="mt-2 flex gap-1 text-[var(--color-star)] lg:mt-[0.95rem] lg:gap-[0.35rem]" role="img" aria-label={fill(ratingLabel, { stars: item.stars })}>
@@ -86,12 +86,16 @@ export const TestimonialSlider = ({ data }: { data: TestimonialsData }) => {
   if (count === 0) return null;
   // the one before the current testimonial, the current one (featured) and the one after it
   const shown = count > 2 ? [-1, 0, 1].map((step) => ({ item: items[(index + step + count) % count], featured: step === 0 })) : [{ item: items[index], featured: true }];
+  // like the design, the dots mark the first of the three cards shown (the featured one is the next), so with three
+  // or more testimonials the first dot is lit while the second testimonial is featured
+  const offset = count > 2 ? 1 : 0;
+  const start = (index - offset + count) % count;
   const arrow = `${roundArrowClass} size-12 lg:absolute lg:top-[13.875rem] lg:size-[3.875rem] lg:-translate-y-1/2`;
 
   return (
     <div
       data-reveal
-      className={`relative mx-auto mt-14 max-w-[40rem] ${sidePadding} lg:mt-[5.2rem] lg:max-w-none lg:px-[7.19rem]`}
+      className={`relative mx-auto mt-14 max-w-[40rem] ${sidePadding} lg:mt-[6rem] lg:max-w-none lg:px-[7.19rem]`}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocus={() => setPaused(true)}
@@ -113,7 +117,7 @@ export const TestimonialSlider = ({ data }: { data: TestimonialsData }) => {
       {count > 1 && (
         <div className="mt-10 flex items-center justify-center gap-5 lg:mt-[3rem] lg:gap-0">
           <button type="button" aria-label={data.previousLabel} onClick={() => go(-1)} className={`${arrow} lg:left-[1.75rem]`}>
-            <Icon name="TbChevronLeft" className="size-5 lg:size-[1.75rem]" strokeWidth={2.6} />
+            <Icon name="TbChevronLeft" className="size-5 lg:size-[2rem]" strokeWidth={3} />
           </button>
           <div className="flex gap-3 lg:gap-[1rem]">
             {items.map((item, n) => (
@@ -121,14 +125,14 @@ export const TestimonialSlider = ({ data }: { data: TestimonialsData }) => {
                 key={item.id}
                 type="button"
                 aria-label={fill(data.dotLabel, { number: n + 1 })}
-                aria-current={n === index ? "true" : undefined}
-                onClick={() => setIndex(n)}
-                className={`size-3.5 rounded-full transition-colors duration-300 lg:size-[1.5rem] ${n === index ? "bg-[var(--color-orange)]" : "bg-[var(--color-dot)] hover:bg-[var(--color-orange)]"}`}
+                aria-current={n === start ? "true" : undefined}
+                onClick={() => setIndex((n + offset) % count)}
+                className={`size-3.5 rounded-full transition-colors duration-300 lg:size-[1.5rem] ${n === start ? "bg-[var(--color-orange)]" : "bg-[var(--color-dot)] hover:bg-[var(--color-orange)]"}`}
               />
             ))}
           </div>
           <button type="button" aria-label={data.nextLabel} onClick={() => go(1)} className={`${arrow} lg:right-[1.69rem]`}>
-            <Icon name="TbChevronRight" className="size-5 lg:size-[1.75rem]" strokeWidth={2.6} />
+            <Icon name="TbChevronRight" className="size-5 lg:size-[2rem]" strokeWidth={3} />
           </button>
         </div>
       )}

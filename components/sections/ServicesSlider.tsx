@@ -20,11 +20,11 @@ const Card = ({ card, className = "" }: { card: ServiceCard; className?: string 
       </span>
     </div>
     <div className="flex-1 px-5 pb-7 pt-5 text-center lg:px-[1rem] lg:pb-[1rem] lg:pt-[1.25rem]">
-      <h3 className="font-sans text-[1.3rem] font-bold leading-tight text-[var(--color-ink)] transition-colors group-hover:text-[var(--color-orange)] lg:text-[1.81rem] lg:leading-none">
+      <h3 className="font-sans text-[1.3rem] font-bold leading-tight text-[var(--color-ink)] transition-colors group-hover:text-[var(--color-orange)] lg:text-[1.62rem] lg:leading-none">
         {card.title}
       </h3>
       {/* the design's line breaks (\n in the JSON) are kept from 1024px up */}
-      <p className="mt-3 font-sans text-[0.95rem] leading-[1.6] text-[var(--color-text-soft)] lg:mt-[1rem] lg:whitespace-pre-line lg:text-[1.325rem] lg:leading-[1.94rem]">{card.text}</p>
+      <p className="mt-3 font-sans text-[0.95rem] leading-[1.6] text-[var(--color-text-soft)] lg:mt-[1.1rem] lg:whitespace-pre-line lg:text-[1.22rem] lg:leading-[1.94rem]">{card.text}</p>
     </div>
   </li>
 );
@@ -71,8 +71,9 @@ export const ServicesSlider = ({ data }: { data: ServicesData }) => {
         ))}
       </ul>
 
+      {/* from 1024px up the squares sit where the design has them, a little right of the cards' middle */}
       {count > 1 && (
-        <div className="mt-8 flex justify-center gap-3 lg:mt-[2.9rem] lg:gap-[1.06rem]">
+        <div className="mt-8 flex justify-center gap-3 lg:mt-[2.9rem] lg:justify-start lg:gap-[1.06rem] lg:pl-[34.125rem]">
           {cards.map((card, n) => (
             <button
               key={card.id}
@@ -80,7 +81,7 @@ export const ServicesSlider = ({ data }: { data: ServicesData }) => {
               aria-label={fill(data.pageLabel, { number: n + 1 })}
               aria-current={n === index ? "true" : undefined}
               onClick={() => setIndex(n)}
-              className={`grid size-6 place-items-center rounded-[0.3rem] border-2 transition-colors duration-300 lg:size-[1.44rem] lg:rounded-[0.3rem] lg:border-[0.125rem] ${
+              className={`grid size-6 place-items-center rounded-[0.3rem] border-2 transition-colors duration-300 lg:size-[1.5rem] lg:rounded-[0.3rem] lg:border-[0.14rem] ${
                 n === index ? "border-[var(--color-orange)]" : "border-[var(--color-dot)] hover:border-[var(--color-orange)]"
               }`}
             >

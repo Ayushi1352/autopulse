@@ -14,7 +14,7 @@ export const ContactSection = ({ data }: { data?: ContactData }) => {
   return (
     <section id={data.id} className={`bg-[var(--color-bg-main)] ${scrollMargin} ${sectionSpace}`}>
       <div className={`${sidePadding} lg:px-0 lg:pl-[4.125rem] lg:pr-[4.19rem]`}>
-        <div data-reveal className="relative mx-auto max-w-[44rem] overflow-hidden rounded-[1.75rem] bg-[var(--color-navy-deep)] lg:h-[56.125rem] lg:max-w-none lg:rounded-[2.5rem]">
+        <div data-reveal className="relative mx-auto max-w-[44rem] overflow-hidden rounded-[1.75rem] bg-[var(--color-navy-contact)] lg:h-[56.125rem] lg:max-w-none lg:rounded-[2.5rem]">
           <div className="relative px-6 pb-4 pt-10 sm:px-10 sm:pt-12 lg:p-0 lg:pl-[5.69rem] lg:pt-[3.9rem]">
             <Eyebrow
               label={data.label}
@@ -22,7 +22,7 @@ export const ContactSection = ({ data }: { data?: ContactData }) => {
               lineClassName="h-[0.2rem] w-10 sm:w-12 lg:h-[0.25rem] lg:w-[5.2rem]"
               gapClassName="gap-4 lg:gap-[1.375rem]"
             />
-            <h2 className="mt-4 font-heading text-[length:min(2.3rem,calc((100vw-2rem)/10.5))] font-bold leading-[1.15] tracking-[-0.01em] text-[var(--color-white)] sm:text-[3.1rem] lg:-ml-[0.1rem] lg:mt-[1.6rem] lg:text-[5.2rem] lg:leading-[5.125rem]">
+            <h2 className="mt-4 font-heading text-[length:min(2.3rem,calc((100vw-2rem)/10.5))] font-extrabold leading-[1.15] tracking-[-0.01em] text-[var(--color-white)] sm:text-[3.1rem] lg:-ml-[0.1rem] lg:mt-[1.6rem] lg:text-[5.2rem] lg:leading-[5.125rem]">
               <TitleWords data={data} accentClassName="block" />
             </h2>
             {/* the design's line breaks (\n in the JSON) are kept from 640px up */}
@@ -66,15 +66,13 @@ export const ContactSection = ({ data }: { data?: ContactData }) => {
             </ul>
           </div>
 
-          {/*
-            From 1024px up the photo sits inside a big circle whose left edge is the design's orange arc: an orange circle
-            and, 1.875rem inside it, the photo cut to the same circle. Phones and tablets: the photo under the text.
-          */}
-          <div className="relative mt-4 aspect-[1269/1240] w-full lg:absolute lg:right-0 lg:top-0 lg:mt-0 lg:aspect-auto lg:h-full lg:w-[54.875rem]">
-            <span aria-hidden="true" className="absolute inset-0 hidden bg-[var(--color-orange-bright)] [clip-path:circle(38.625rem_at_38.625rem_34rem)] lg:block" />
-            <div className="absolute inset-0 lg:[clip-path:circle(36.75rem_at_38.625rem_34rem)]">
-              <Image src={data.image} alt={data.imageAlt} fill quality={90} sizes="(min-width: 1024px) 46vw, (min-width: 640px) 44rem, 100vw" className="object-cover object-[center_30%] lg:object-[30%_center]" />
-            </div>
+          {/* phones and tablets: the photo under the text */}
+          <div className="relative mt-4 aspect-[1269/1240] w-full lg:hidden">
+            <Image src={data.image} alt={data.imageAlt} fill quality={90} sizes="(min-width: 640px) 44rem, 100vw" className="object-cover object-[center_30%]" />
+          </div>
+          {/* 1024px up: the design's own photo behind its orange arc, filling the card's right part */}
+          <div className="absolute right-0 top-0 hidden h-full w-[55.875rem] lg:block">
+            <Image src={data.imageDesktop} alt={data.imageAlt} fill quality={90} sizes="47vw" className="object-cover object-left" />
           </div>
         </div>
       </div>

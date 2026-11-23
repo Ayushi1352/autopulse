@@ -46,17 +46,17 @@ export const ApCarGear = (props: Props) => (
 
 /** "Our Mission" tab: a mountain with a snow line and a flag on its top */
 export const ApMountainFlag = (props: Props) => (
-  <svg {...svgProps(props)} {...line} strokeWidth={1.7}>
-    <path d="M2.8 21.2 10 8.6l7.2 12.6Z" />
-    <path d="m6.9 14.1 1.7 1.6 1.4-1.6 1.4 1.6 1.7-1.6" />
-    <path d="M10 8.6V2.6h6.4l-1.6 2.1 1.6 2.1H10" />
+  <svg {...svgProps(props)} {...line} strokeWidth={1.6}>
+    <path d="M1.6 22.4 10.4 8.4l8.8 14Z" />
+    <path d="m5.6 15.2 2.2 2 2.6-2.6 2.6 2.6 2.2-2" />
+    <path d="M10.4 8.4V1.6h7.6l-2 2.5 2 2.5h-7.6" />
   </svg>
 );
 
 /** "Our Vision" card: an eye with three short rays above it and a soft orange pupil */
 export const ApEyeRays = (props: Props) => (
   <svg {...svgProps(props)}>
-    <g {...line} strokeWidth={1.5}>
+    <g {...line} strokeWidth={1.7}>
       <path d="M1.8 15.4C4.6 11.4 8 9.4 12 9.4s7.4 2 10.2 6c-2.8 4-6.2 6-10.2 6s-7.4-2-10.2-6Z" />
       <circle cx="12" cy="15.4" r="4.3" />
       <path d="M12 3.4v2.8M6.6 5.2l1.3 2.2M17.4 5.2l-1.3 2.2" />
@@ -166,5 +166,15 @@ export const ApCalendarGrid = (props: Props) => (
     <g fill="currentColor">
       {[7.1, 10.8, 14.5].flatMap((x) => [10.6, 14.6].map((y) => <rect key={`${x}-${y}`} x={x} y={y} width="2.4" height="2.4" rx="0.5" />))}
     </g>
+  </svg>
+);
+
+/** "Book a Service" heading: an outline sedan seen from the side (wide, like the design's) */
+export const ApSedan = (props: Props) => (
+  <svg {...svgProps(props, "0 0 164 70")} {...line} strokeWidth={5.5}>
+    <path d="M14 53H5.5c-2.2 0-3.7-1.6-3.7-3.7v-9c0-4.4 1.6-7.6 4.6-9.6C8.6 25.6 11 23.4 16 23l29.5-1C56 9 63 4 73 4h22c11 0 20 6 33 17.5l17.5 2.6c8 1.4 14.5 4.8 14.5 10.4V50c0 1.8-1.4 3-3 3H150" />
+    <circle cx="32" cy="52" r="13" />
+    <circle cx="129.5" cy="52" r="13" />
+    <path d="M51.5 54.5h56M47.5 22.5h68M84 15.5v6.5M66.5 41h21.5M101 38.5l14-7.5" />
   </svg>
 );

@@ -15,10 +15,12 @@
   --color-navy-deep: #021a35;
   --color-navy-process: #062253;
   /* the navy layer over the "How It Works" photo (stronger on the left, behind the text) */
-  --color-process-overlay: rgba(4, 30, 76, 0.93);
-  --color-process-overlay-soft: rgba(4, 30, 76, 0.72);
+  --color-process-overlay: rgba(6, 44, 104, 0.8);
+  --color-process-overlay-soft: rgba(10, 52, 116, 0.6);
   --color-navy-icon: #000e25;
-  --color-navy-footer: #01172f;
+  --color-navy-footer: #021830;
+  /* the contact card */
+  --color-navy-contact: #031d38;
   /* Ink (titles, menu) */
   --color-ink: #030a1f;
   --color-ink-soft: #0f1425;
@@ -66,3 +68,4 @@
   --color-shadow-orange: rgba(254, 90, 2, 0.35);
   --color-overlay-menu: rgba(3, 10, 31, 0.45);
 }
+/* tw-rebuild 1795438996949605900 */
