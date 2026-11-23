@@ -1,0 +1,631 @@
+{
+  "common": {
+    "theme": {
+      "fonts": {
+        "primary": "var(--font-montserrat)",
+        "heading": "var(--font-montserrat)",
+        "display": "var(--font-poppins)",
+        "footer": "var(--font-ubuntu)",
+        "quote": "var(--font-carlito)"
+      }
+    },
+    "metadata": {
+      "title": "AutoPulse Automotive Services | Complete Car Care & Repair",
+      "description": "From routine maintenance to complex repairs, AutoPulse keeps your vehicle safe, reliable and road-ready: engine repair, oil change, brakes, AC, tyres, battery and more.",
+      "lang": "en"
+    },
+    "company": {
+      "logo": "/images/autopulse-logo.webp",
+      "logoLight": "/images/autopulse-logo-white.webp",
+      "logoAlt": "AutoPulse Automotive Services",
+      "logoWidth": 1628,
+      "logoHeight": 657,
+      "socialLinks": [
+        {
+          "id": "facebook",
+          "icon": "FaFacebookF",
+          "label": "AutoPulse on Facebook",
+          "url": "https://www.facebook.com/"
+        },
+        {
+          "id": "instagram",
+          "icon": "FaInstagram",
+          "label": "AutoPulse on Instagram",
+          "url": "https://www.instagram.com/"
+        },
+        {
+          "id": "linkedin",
+          "icon": "FaLinkedinIn",
+          "label": "AutoPulse on LinkedIn",
+          "url": "https://www.linkedin.com/"
+        },
+        {
+          "id": "youtube",
+          "icon": "FaYoutube",
+          "label": "AutoPulse on YouTube",
+          "url": "https://www.youtube.com/"
+        }
+      ]
+    },
+    "Footer": {
+      "logoUrl": "#home",
+      "homeLabel": "AutoPulse — back to top",
+      "description": "Your trusted partner for complete car care, maintenance, and repair services\nwith quality, transparency, and expert support.",
+      "navLabel": "Footer",
+      "links": [
+        {
+          "id": "home",
+          "label": "Home",
+          "url": "#home"
+        },
+        {
+          "id": "about-us",
+          "label": "About Us",
+          "url": "#about"
+        },
+        {
+          "id": "services",
+          "label": "Our Services",
+          "url": "#services"
+        },
+        {
+          "id": "why-choose-us",
+          "label": "Why Choose Us",
+          "url": "#why-us"
+        },
+        {
+          "id": "faqs",
+          "label": "FAQs",
+          "url": "#faqs"
+        },
+        {
+          "id": "contact-us",
+          "label": "Contact Us",
+          "url": "#contact"
+        }
+      ],
+      "socialLabel": "Follow AutoPulse",
+      "copyrightText": "© {year} AutoPulse. All Rights Reserved."
+    }
+  },
+  "categories": {
+    "Automotive": {
+      "sections": {
+        "Header": {
+          "variants": {
+            "AutomotiveHeader1": {
+              "logoUrl": "/",
+              "homeLabel": "AutoPulse — back to top",
+              "topbarLabel": "Contact details",
+              "topbarItems": [
+                {
+                  "id": "phone",
+                  "icon": "FaPhoneAlt",
+                  "title": "Phone",
+                  "lines": ["+1 (302) 555-0147"],
+                  "url": "tel:+13025550147"
+                },
+                {
+                  "id": "email",
+                  "icon": "FaEnvelope",
+                  "title": "Email",
+                  "lines": ["info@autopulse.com"],
+                  "url": "mailto:info@autopulse.com"
+                },
+                {
+                  "id": "location",
+                  "icon": "FaMapMarkerAlt",
+                  "title": "Location",
+                  "lines": ["New York, USA"],
+                  "url": "https://www.google.com/maps/search/?api=1&query=New+York+USA"
+                }
+              ],
+              "navLinks": [
+                {
+                  "id": "home",
+                  "label": "Home",
+                  "url": "#home"
+                },
+                {
+                  "id": "about-us",
+                  "label": "About Us",
+                  "url": "#about"
+                },
+                {
+                  "id": "services",
+                  "label": "Our Services",
+                  "url": "#services"
+                },
+                {
+                  "id": "why-choose-us",
+                  "label": "Why Choose Us",
+                  "url": "#why-us"
+                },
+                {
+                  "id": "how-it-works",
+                  "label": "How It Works",
+                  "url": "#how-it-works"
+                },
+                {
+                  "id": "testimonials",
+                  "label": "Testimonials",
+                  "url": "#testimonials"
+                },
+                {
+                  "id": "faqs",
+                  "label": "FAQs",
+                  "url": "#faqs"
+                },
+                {
+                  "id": "contact-us",
+                  "label": "Contact Us",
+                  "url": "#contact"
+                }
+              ],
+              "buttonText": "Book a Service",
+              "buttonUrl": "#book",
+              "mainNavLabel": "Main",
+              "mobileNavLabel": "Mobile",
+              "openMenuLabel": "Open menu",
+              "closeMenuLabel": "Close menu"
+            }
+          }
+        },
+        "Hero": {
+          "variants": {
+            "AutomotiveHero1": {
+              "id": "home",
+              "label": "Trusted Automotive Experts",
+              "titleTop": "Complete Car Care\n& Repair Services for a",
+              "titleAccent": "Smoother Drive",
+              "description": "From routine maintenance to complex repairs,\nAutoPulse keeps your vehicle safe, reliable\nand road-ready.",
+              "image": "/images/hero-mechanic-car-v2.webp",
+              "imageDesktop": "/images/hero-mechanic-car-desktop.webp",
+              "imageAlt": "AutoPulse mechanic checking the engine of a grey car, with a tool chest, tyre, jack stand and parts trolley"
+            }
+          }
+        },
+        "About": {
+          "variants": {
+            "AutomotiveAbout1": {
+              "id": "about",
+              "label": "About Us",
+              "title": "Your Trusted Partner for\nComplete Car Repair & Service",
+              "description": "At AutoPulse, we are passionate about keeping your vehicle in top\ncondition. With skilled technicians, modern tools, and a customer-first\napproach, we deliver reliable, high-quality car repair and maintenance\nservices you can trust.",
+              "image": "/images/about-mechanic-v3.webp",
+              "imageAlt": "Smiling AutoPulse technician with folded arms in the workshop",
+              "sideImage": "/images/about-engine-check-design.webp",
+              "sideImageAlt": "Technician servicing the engine of a car",
+              "experienceIcon": "ApCarGear",
+              "experienceValue": "10+",
+              "experienceText": "Years of Experience",
+              "tabsLabel": "Our vision and mission",
+              "tabs": [
+                {
+                  "id": "vision",
+                  "icon": "TbTargetArrow",
+                  "label": "Our Vision",
+                  "contentIcon": "ApEyeRays",
+                  "title": "Our Vision",
+                  "text": "To become a leading automotive service brand, known for\nreliability, innovation, and exceptional customer satisfaction\nin car care and repair."
+                },
+                {
+                  "id": "mission",
+                  "icon": "ApMountainFlag",
+                  "label": "Our Mission",
+                  "contentIcon": "TbRocket",
+                  "title": "Our Mission",
+                  "text": "To deliver honest, high-quality car care with skilled technicians,\ngenuine parts and transparent pricing, so every driver leaves\nconfident and stress-free."
+                }
+              ]
+            }
+          }
+        },
+        "Services": {
+          "variants": {
+            "AutomotiveServices1": {
+              "id": "services",
+              "label": "Our Services",
+              "title": "Complete Car Care Solutions",
+              "description": "From routine maintenance to complex repairs, we offer a full range of automotive services to\nkeep your vehicle running at its best.",
+              "listUrl": "#book",
+              "listLabel": "Our services",
+              "items": [
+                {
+                  "id": "engine-repair",
+                  "icon": "TbEngine",
+                  "title": "Engine Repair"
+                },
+                {
+                  "id": "oil-change",
+                  "icon": "LiaOilCanSolid",
+                  "title": "Oil Change & Filters"
+                },
+                {
+                  "id": "brake-service",
+                  "icon": "ApBrakeDisc",
+                  "title": "Brake Service"
+                },
+                {
+                  "id": "ac-heating",
+                  "icon": "TbSnowflake",
+                  "title": "AC & Heating Repair"
+                },
+                {
+                  "id": "tire-wheel",
+                  "icon": "PiTireBold",
+                  "title": "Tire & Wheel Services"
+                },
+                {
+                  "id": "battery-electrical",
+                  "icon": "TbBatteryAutomotive",
+                  "title": "Battery & Electrical"
+                }
+              ],
+              "cards": [
+                {
+                  "id": "engine-diagnostics",
+                  "icon": "TbEngine",
+                  "title": "Engine Diagnostics",
+                  "text": "Accurate and advanced engine\ndiagnosis to detect issues early\nand keep your car performing\nsmoothly.",
+                  "image": "/images/service-engine-diagnostics-v2.webp",
+                  "imageAlt": "Technician inspecting a car engine under the open bonnet"
+                },
+                {
+                  "id": "timing-belt",
+                  "icon": "ApTimingBelt",
+                  "title": "Timing Belt Replacement",
+                  "text": "Professional timing belt replacement\nto ensure engine safety, efficiency,\nand long-lasting performance.",
+                  "image": "/images/service-timing-belt-v2.webp",
+                  "imageAlt": "Technician inspecting the timing belt of an engine"
+                },
+                {
+                  "id": "fuel-injection",
+                  "icon": "TbGasStation",
+                  "title": "Fuel Injection Cleaning",
+                  "text": "Advanced fuel injection cleaning to\nimprove fuel efficiency, restore power,\nand reduce harmful emissions.",
+                  "image": "/images/service-fuel-injection-v2.webp",
+                  "imageAlt": "Technician working on the fuel injectors of an engine"
+                }
+              ],
+              "pageLabel": "Show service {number}"
+            }
+          }
+        },
+        "Why": {
+          "variants": {
+            "AutomotiveWhy1": {
+              "id": "why-us",
+              "label": "Why Choose Us",
+              "titleTop": "The",
+              "titleAccent": "AutoPulse",
+              "titleEnd": "Advantage",
+              "description": "We go beyond just car repairs — we deliver trust, quality, and a hassle-free service experience.",
+              "image": "/images/why-mechanic-car-v2.webp",
+              "imageAlt": "Smiling AutoPulse mechanic with folded arms in front of a grey car",
+              "points": [
+                {
+                  "id": "technicians",
+                  "icon": "ApAwardStar",
+                  "title": "Experienced Technicians",
+                  "text": "Skilled and certified professionals\nfor reliable car care."
+                },
+                {
+                  "id": "quality",
+                  "icon": "TbSettingsCheck",
+                  "title": "Quality Service",
+                  "text": "High-quality repairs with\nadvanced tools and technology."
+                },
+                {
+                  "id": "on-time",
+                  "icon": "TbClockCheck",
+                  "title": "On-Time Delivery",
+                  "text": "We value your time and ensure\nprompt service."
+                },
+                {
+                  "id": "genuine-parts",
+                  "icon": "ApCarCheck",
+                  "title": "Genuine Parts",
+                  "text": "Only authentic and\nmanufacturer-approved parts."
+                },
+                {
+                  "id": "pricing",
+                  "icon": "PiHandshakeBold",
+                  "title": "Transparent Pricing",
+                  "text": "Fair, clear, and no hidden charges."
+                },
+                {
+                  "id": "satisfaction",
+                  "icon": "ApUsersStars",
+                  "title": "Customer Satisfaction",
+                  "text": "A customer-first approach with\ntrusted and long-term service support."
+                }
+              ]
+            }
+          }
+        },
+        "Process": {
+          "variants": {
+            "AutomotiveProcess1": {
+              "id": "how-it-works",
+              "label": "How It Works",
+              "title": "Book, Service & Drive",
+              "description": "Getting your car serviced is simple and hassle-free.",
+              "image": "/images/how-workshop-bg.webp",
+              "imageAlt": "Modern automotive service workshop with car elevated on a hydraulic lift",
+              "steps": [
+                {
+                  "id": "book",
+                  "icon": "FaCalendarDays",
+                  "title": "01. Book a Service",
+                  "text": "Schedule your service\nonline or give us a call."
+                },
+                {
+                  "id": "service",
+                  "icon": "FaScrewdriverWrench",
+                  "title": "02. Get Your Car Serviced",
+                  "text": "Our experts inspect and\nservice your vehicle."
+                },
+                {
+                  "id": "drive",
+                  "icon": "PiCarFill",
+                  "title": "03. Drive with Confidence",
+                  "text": "Hit the road with a safer,\nsmoother, and better-performing car."
+                }
+              ],
+              "statsLabel": "AutoPulse in numbers",
+              "stats": [
+                {
+                  "id": "cars",
+                  "icon": "PiCarBold",
+                  "value": "5,000+",
+                  "label": "Cars Serviced"
+                },
+                {
+                  "id": "mechanics",
+                  "icon": "PiUsersThreeBold",
+                  "value": "25+",
+                  "label": "Expert Mechanics"
+                },
+                {
+                  "id": "customers",
+                  "icon": "FaRegSmile",
+                  "value": "4,800+",
+                  "label": "Happy Customers"
+                },
+                {
+                  "id": "years",
+                  "icon": "ApCalendarGrid",
+                  "value": "10+",
+                  "label": "Years of Experience"
+                }
+              ]
+            }
+          }
+        },
+        "Testimonials": {
+          "variants": {
+            "AutomotiveTestimonials1": {
+              "id": "testimonials",
+              "label": "Client Testimonials",
+              "titleTop": "What Our",
+              "titleAccent": "Customers",
+              "titleEnd": "Say",
+              "description": "Real experiences from car owners who trust AutoPulse for their service and repair needs.",
+              "ratingLabel": "{stars} out of 5 stars",
+              "previousLabel": "Previous testimonial",
+              "nextLabel": "Next testimonial",
+              "dotLabel": "Show testimonial {number}",
+              "items": [
+                {
+                  "id": "rohit",
+                  "name": "Rohit Mehra",
+                  "location": "Noida, UP",
+                  "quote": "Excellent service and professional\nstaff. My car was serviced on time\nand is running perfectly now. Highly\nrecommend AutoPulse!",
+                  "image": "/images/testimonial-rohit-v2.webp",
+                  "stars": 5
+                },
+                {
+                  "id": "priya",
+                  "name": "Priya Sharma",
+                  "location": "Ghaziabad, UP",
+                  "highlight": "Great experience!",
+                  "quote": "Transparent\npricing, genuine parts, and quick\nturnaround. My go-to place for\nall car repairs and maintenance.",
+                  "image": "/images/testimonial-priya-v2.webp",
+                  "stars": 5
+                },
+                {
+                  "id": "amit",
+                  "name": "Amit Verma",
+                  "location": "Delhi, NCR",
+                  "quote": "The team at AutoPulse is skilled,\nfriendly, and very helpful. They\ndiagnosed the issue quickly and\nfixed it with perfect care.",
+                  "image": "/images/testimonial-amit-v2.webp",
+                  "stars": 5
+                }
+              ]
+            }
+          }
+        },
+        "Faq": {
+          "variants": {
+            "AutomotiveFaq1": {
+              "id": "faqs",
+              "label": "Frequently Asked Questions",
+              "titleTop": "Find Answers To The Most\nCommon",
+              "titleAccent": "Customer Queries",
+              "image": "/images/faq-thinking-man-v2.webp",
+              "imageAlt": "Thoughtful man choosing between a row of cars",
+              "items": [
+                {
+                  "id": "full-service",
+                  "question": "What is included in a full car service?",
+                  "answer": "A full car service typically includes engine oil and filter change, a complete vehicle\ninspection, brake check, fluid top-ups, battery check, and a general safety check."
+                },
+                {
+                  "id": "pick-up",
+                  "question": "Do you offer pick-up and drop-off service?",
+                  "answer": "Yes. We provide free doorstep pick-up and drop-off service for your convenience,\nensuring your car is serviced safely without disrupting your daily schedule."
+                },
+                {
+                  "id": "duration",
+                  "question": "How long does a standard service take?",
+                  "answer": "A standard car service typically takes between 2 to 4 hours to complete.\nWe provide an estimated time upfront and keep you updated at every step."
+                },
+                {
+                  "id": "warranty",
+                  "question": "Is your service covered by warranty?",
+                  "answer": "Yes. All repairs and genuine replacement parts come with a service warranty,\ngiving you complete confidence and peace of mind on every journey."
+                },
+                {
+                  "id": "roadside",
+                  "question": "Do you provide emergency roadside assistance?",
+                  "answer": "Yes. We provide 24/7 emergency roadside help for breakdowns, tyres, and towing.\nSimply call our hotline and our mobile team will reach you quickly."
+                }
+              ]
+            }
+          }
+        },
+        "Contact": {
+          "variants": {
+            "AutomotiveContact1": {
+              "id": "contact",
+              "label": "Get in Touch",
+              "titleTop": "Need Car Service or",
+              "titleAccent": "Support?",
+              "description": "Reach out to our team for service booking,\nquick assistance, or any inquiries.",
+              "image": "/images/contact-support-v2.webp",
+              "imageAlt": "Smiling AutoPulse support agent with a headset at her desk",
+              "items": [
+                {
+                  "id": "phone",
+                  "icon": "FaPhoneAlt",
+                  "title": "Call Us",
+                  "lines": ["+1 (555) 123-4567"],
+                  "url": "tel:+15551234567"
+                },
+                {
+                  "id": "email",
+                  "icon": "FaEnvelope",
+                  "title": "Email Us",
+                  "lines": ["info@autopulse.com"],
+                  "url": "mailto:info@autopulse.com"
+                },
+                {
+                  "id": "location",
+                  "icon": "FaMapMarkerAlt",
+                  "title": "Our Location",
+                  "lines": ["1234 Auto Drive, Dallas, TX 75201,", "United States"],
+                  "url": "https://www.google.com/maps/search/?api=1&query=1234+Auto+Drive+Dallas+TX+75201"
+                }
+              ]
+            }
+          }
+        },
+        "Booking": {
+          "variants": {
+            "AutomotiveBooking1": {
+              "id": "book",
+              "icon": "PiCarProfile",
+              "titleTop": "Book a",
+              "titleAccent": "Service",
+              "description": "Fill in your details to schedule your car service appointment.",
+              "fields": {
+                "name": {
+                  "placeholder": "Your Name *",
+                  "icon": "TbUser"
+                },
+                "phone": {
+                  "placeholder": "Phone Number *",
+                  "icon": "FaPhoneAlt"
+                },
+                "email": {
+                  "placeholder": "Email Address *",
+                  "icon": "TbMail"
+                },
+                "date": {
+                  "placeholder": "Preferred Date *",
+                  "icon": "TbCalendarMonth"
+                },
+                "service": {
+                  "placeholder": "Select Service *",
+                  "icon": "TbCar"
+                },
+                "time": {
+                  "placeholder": "Preferred Time *",
+                  "icon": "TbClock"
+                },
+                "message": {
+                  "placeholder": "Your Message (Optional)",
+                  "icon": "TbMessage"
+                }
+              },
+              "extraServices": ["General Car Service", "Other"],
+              "timeOptions": [
+                "09:00 AM – 11:00 AM",
+                "11:00 AM – 01:00 PM",
+                "01:00 PM – 03:00 PM",
+                "03:00 PM – 05:00 PM",
+                "05:00 PM – 07:00 PM"
+              ],
+              "button": "Book Now",
+              "sending": "Booking...",
+              "successTitle": "Thank you, {name}!",
+              "success": "Your service is booked. We will call you shortly to confirm the time.",
+              "closeLabel": "Close message"
+            }
+          }
+        }
+      },
+      "templateComponents": {
+        "template-1": {
+          "shared": {
+            "Header": "AutomotiveHeader1",
+            "Footer": "common.Footer"
+          },
+          "pages": {
+            "home": {
+              "components": [
+                {
+                  "key": "Hero",
+                  "component": "AutomotiveHero1"
+                },
+                {
+                  "key": "About",
+                  "component": "AutomotiveAbout1"
+                },
+                {
+                  "key": "Services",
+                  "component": "AutomotiveServices1"
+                },
+                {
+                  "key": "Why",
+                  "component": "AutomotiveWhy1"
+                },
+                {
+                  "key": "Process",
+                  "component": "AutomotiveProcess1"
+                },
+                {
+                  "key": "Testimonials",
+                  "component": "AutomotiveTestimonials1"
+                },
+                {
+                  "key": "Faq",
+                  "component": "AutomotiveFaq1"
+                },
+                {
+                  "key": "Contact",
+                  "component": "AutomotiveContact1"
+                },
+                {
+                  "key": "Booking",
+                  "component": "AutomotiveBooking1"
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

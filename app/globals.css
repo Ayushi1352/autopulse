@@ -1,26 +1,68 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --font-primary: Arial, sans-serif;
+  --font-heading: Arial, sans-serif;
+  --font-display: Arial, sans-serif;
+  --font-footer: Arial, sans-serif;
+  --font-quote: Calibri, Arial, sans-serif;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* AutoPulse theme (from the logo and the design: deep navy and bright orange on white) */
+  /* Navy (top bar, hero, process, featured testimonial, open FAQ, contact card, footer) */
+  --color-navy: #071b3e;
+  --color-navy-deep: #021a35;
+  --color-navy-process: #062253;
+  /* the navy layer over the "How It Works" photo (stronger on the left, behind the text) */
+  --color-process-overlay: rgba(4, 30, 76, 0.93);
+  --color-process-overlay-soft: rgba(4, 30, 76, 0.72);
+  --color-navy-icon: #000e25;
+  --color-navy-footer: #01172f;
+  /* Ink (titles, menu) */
+  --color-ink: #030a1f;
+  --color-ink-soft: #0f1425;
+  /* Orange (the logo's "Pulse": labels, buttons, icons) */
+  --color-orange: #fe5a02;
+  --color-orange-dark: #e24d00;
+  --color-orange-bright: #ff7302;
+  /* the slanted band of numbers under "How It Works" */
+  --color-orange-band: #da5005;
+  --color-star: #fe8609;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+  /* Text */
+  --color-text: #151b2b;
+  --color-text-soft: #3a404c;
+  --color-text-muted: #646f7b;
+  --color-text-light: #d3d7de;
+  --color-white: #ffffff;
+  --color-white-90: rgba(255, 255, 255, 0.9);
+  --color-white-80: rgba(255, 255, 255, 0.8);
+  --color-white-50: rgba(255, 255, 255, 0.5);
+  --color-white-30: rgba(255, 255, 255, 0.3);
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Backgrounds and borders */
+  --color-bg-main: #fefefe;
+  --color-bg-header: #ffffff;
+  --color-bg-card: #f9f9f9;
+  --color-bg-peach: #fef9f7;
+  --color-bg-peach-icon: #fdeee7;
+  --color-bg-faq-answer: #f7f8fa;
+  --color-bg-form: #fbfbfc;
+  /* Shown on both sides of the page when the screen is wider than 1920px (or the browser is zoomed out). */
+  --color-bg-backdrop: #eef0f4;
+  --color-border: #e6e6e8;
+  --color-border-field: #cfd2d8;
+  --color-border-tab: #d9dbe0;
+  --color-divider: #b8bcc1;
+  --color-divider-light: #d5d8dd;
+  --color-dot: #5f6878;
+  /* hero: the soft light behind the car */
+  --color-hero-glow: #eef1f6;
+
+  /* Shadows */
+  --color-shadow: rgba(3, 10, 31, 0.08);
+  --color-shadow-strong: rgba(3, 10, 31, 0.16);
+  --color-shadow-orange: rgba(254, 90, 2, 0.35);
+  --color-overlay-menu: rgba(3, 10, 31, 0.45);
 }
