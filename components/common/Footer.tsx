@@ -78,7 +78,7 @@ export const Footer = async ({ data, company }: { data?: FooterData; company: Co
 
       <div aria-hidden="true" className="mt-8 flex items-center gap-4 lg:mt-[1.45rem] lg:gap-[1.8rem]">
         <FadeLine />
-        <Icon name="FaCar" className="size-9 shrink-0 text-[var(--color-orange-bright)] lg:size-[4.5rem]" />
+        <Icon name="FaCar" className="size-9 shrink-0 text-[var(--color-orange-bright)] lg:size-[3.6rem]" />
         <FadeLine toLeft />
       </div>
 

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import type { HeroData } from "@/types/templates.types";
 import { Eyebrow } from "@/components/ui/SectionHeading";
-import { sidePadding } from "@/components/ui/sectionSpace";
+import { sectionMarginBottom, sidePadding } from "@/components/ui/sectionSpace";
 
 /**
  * Under the header: the navy shape on the left with a slanted right edge (the label with an orange line, the
@@ -12,7 +12,7 @@ export const HeroSection = ({ data }: { data?: HeroData }) => {
   if (!data) return null;
 
   return (
-    <section id={data.id} className="relative mt-[4.5rem] overflow-hidden bg-[var(--color-bg-main)] sm:mt-[5.5rem] lg:mt-[9.375rem] lg:h-[47.06rem]">
+    <section id={data.id} className={`relative mt-[4.5rem] overflow-hidden bg-[var(--color-bg-main)] sm:mt-[5.5rem] lg:mt-[9.375rem] lg:h-[47.06rem] ${sectionMarginBottom}`}>
       {/* 1024px up: the navy shape, from 518px at the top to 1045px at the bottom of the 1920px design */}
       <div aria-hidden="true" className="absolute inset-0 hidden bg-[var(--color-navy)] [clip-path:polygon(0_0,26.98%_0,54.43%_100%,0_100%)] lg:block" />
 
@@ -45,7 +45,7 @@ export const HeroSection = ({ data }: { data?: HeroData }) => {
       </div>
 
       {/* phones and tablets: the photo with a see-through background under the navy block */}
-      <div className="relative mx-auto mb-6 mt-6 aspect-[1456/791] w-[calc(100%-2rem)] max-w-[44rem] sm:mb-8 lg:hidden">
+      <div className="relative mx-auto mt-6 aspect-[1456/791] w-[calc(100%-2rem)] max-w-[44rem] lg:hidden">
         <Image src={data.image} alt={data.imageAlt} fill preload quality={90} sizes="(min-width: 640px) 44rem, 92vw" className="object-contain" />
       </div>
       {/*

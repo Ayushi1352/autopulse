@@ -16,10 +16,33 @@
     },
     "company": {
       "logo": "/images/autopulse-logo.webp",
-      "logoLight": "/images/autopulse-logo-white.webp",
       "logoAlt": "AutoPulse Automotive Services",
       "logoWidth": 1628,
       "logoHeight": 657,
+      "contactItems": [
+        {
+          "id": "phone",
+          "icon": "FaPhoneAlt",
+          "title": "Call Us",
+          "lines": ["+1 0000000000"],
+          "url": "tel:+10000000000"
+        },
+        {
+          "id": "email",
+          "icon": "FaEnvelope",
+          "title": "Email Us",
+          "lines": ["info@xyz.com"],
+          "url": "mailto:info@xyz.com"
+        },
+        {
+          "id": "location",
+          "icon": "FaMapMarkerAlt",
+          "title": "Our Location",
+          "lines": ["1234 Auto Drive, Dallas, TX 75201,", "United States"],
+          "url": "https://www.google.com/maps/search/?api=1&query=1234+Auto+Drive+Dallas+TX+75201",
+          "topbarText": "Dallas, USA"
+        }
+      ],
       "socialLinks": [
         {
           "id": "facebook",
@@ -100,29 +123,6 @@
               "logoUrl": "/",
               "homeLabel": "AutoPulse — back to top",
               "topbarLabel": "Contact details",
-              "topbarItems": [
-                {
-                  "id": "phone",
-                  "icon": "FaPhoneAlt",
-                  "title": "Phone",
-                  "lines": ["+1 (302) 555-0147"],
-                  "url": "tel:+13025550147"
-                },
-                {
-                  "id": "email",
-                  "icon": "FaEnvelope",
-                  "title": "Email",
-                  "lines": ["info@autopulse.com"],
-                  "url": "mailto:info@autopulse.com"
-                },
-                {
-                  "id": "location",
-                  "icon": "FaMapMarkerAlt",
-                  "title": "Location",
-                  "lines": ["New York, USA"],
-                  "url": "https://www.google.com/maps/search/?api=1&query=New+York+USA"
-                }
-              ],
               "navLinks": [
                 {
                   "id": "home",
@@ -355,8 +355,8 @@
               "label": "How It Works",
               "title": "Book, Service & Drive",
               "description": "Getting your car serviced is simple and hassle-free.",
-              "image": "/images/how-workshop-bg.webp",
-              "imageAlt": "Modern automotive service workshop with car elevated on a hydraulic lift",
+              "image": "/images/about-engine-check-v3.webp",
+              "imageAlt": "AutoPulse mechanic leaning into the open engine bay of a car in the workshop",
               "steps": [
                 {
                   "id": "book",
@@ -500,30 +500,7 @@
               "description": "Reach out to our team for service booking,\nquick assistance, or any inquiries.",
               "image": "/images/contact-support-v2.webp",
               "imageDesktop": "/images/contact-support-desktop-v2.webp",
-              "imageAlt": "Smiling AutoPulse support agent with a headset at her desk",
-              "items": [
-                {
-                  "id": "phone",
-                  "icon": "FaPhoneAlt",
-                  "title": "Call Us",
-                  "lines": ["+1 (555) 123-4567"],
-                  "url": "tel:+15551234567"
-                },
-                {
-                  "id": "email",
-                  "icon": "FaEnvelope",
-                  "title": "Email Us",
-                  "lines": ["info@autopulse.com"],
-                  "url": "mailto:info@autopulse.com"
-                },
-                {
-                  "id": "location",
-                  "icon": "FaMapMarkerAlt",
-                  "title": "Our Location",
-                  "lines": ["1234 Auto Drive, Dallas, TX 75201,", "United States"],
-                  "url": "https://www.google.com/maps/search/?api=1&query=1234+Auto+Drive+Dallas+TX+75201"
-                }
-              ]
+              "imageAlt": "Smiling AutoPulse support agent with a headset at her desk"
             }
           }
         },

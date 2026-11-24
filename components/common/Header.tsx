@@ -92,7 +92,7 @@ export const Header = ({ data, company }: { data?: HeaderData; company: CompanyD
             compact ? "-translate-y-full opacity-0" : ""
           }`}
         >
-          {data.topbarItems.map((item, index) => {
+          {company.contactItems.map((item, index) => {
             const external = item.url.startsWith("http");
             return (
               <Fragment key={item.id}>
@@ -107,7 +107,7 @@ export const Header = ({ data, company }: { data?: HeaderData; company: CompanyD
                     className="flex items-center gap-[0.6rem] whitespace-nowrap font-display text-[1.08rem] font-normal leading-none text-[var(--color-white)] transition-colors hover:text-[var(--color-orange-bright)]"
                   >
                     <Icon name={item.icon} className="size-[1.4rem]" />
-                    {item.lines.join(" ")}
+                    {item.topbarText ?? item.lines.join(" ")}
                   </a>
                 </li>
               </Fragment>

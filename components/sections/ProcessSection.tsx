@@ -5,12 +5,30 @@ import { Eyebrow, introSize, labelSize, titleSize } from "@/components/ui/Sectio
 import { scrollMargin, sectionSpaceBottom, sidePadding } from "@/components/ui/sectionSpace";
 import { Icon } from "@/components/ui/Icon";
 
-// From 1024px up each step is as wide as in the design, so the orange arrows land where the design has them
-const stepWidths = ["lg:w-[34.375rem]", "lg:w-[35.94rem]", "lg:flex-1"];
+/*
+  From 1024px up every piece of a step sits where the 1920px design has it: the circles start at 53, 672 and
+  1312px, the arrows at 603 and 1248px; the thin line and the text keep the design's own distances per step.
+*/
+const stepLayout = [
+  { width: "lg:w-[34.375rem]", line: "lg:ml-[1rem]", text: "lg:ml-[2.45rem]" },
+  { width: "lg:w-[36rem]", line: "lg:ml-[0.69rem]", text: "lg:ml-[1.44rem]" },
+  { width: "lg:min-w-0 lg:flex-1", line: "lg:ml-[0.81rem]", text: "lg:ml-[1.5rem]", copy: "lg:text-[1.38rem] lg:tracking-[-0.035em]" },
+];
+// the text of a step (the design sets the last step's long second line tighter, so it ends 46px before the edge)
+const copyDefault = "lg:text-[1.45rem] lg:tracking-[-0.01em]";
+const arrowWidths = ["lg:w-[4.31rem]", "lg:w-[4rem]"];
+
+/** The design's bold orange arrow between two steps */
+const StepArrow = () => (
+  <svg viewBox="0 0 35 42" className="h-[2.625rem] w-[2.19rem]" fill="none" stroke="currentColor" strokeWidth="8.5" strokeLinejoin="miter" aria-hidden="true">
+    <path d="M5 4 28 21 5 38" />
+  </svg>
+);
 
 /**
- * Navy band with the workshop photo fading in on the right: centred heading and the three steps (white circle
- * icons, orange arrows between them). The slanted orange band with the numbers hangs over its bottom edge.
+ * Navy band over the workshop (a mechanic leaning into an open engine bay on the right, the rest a soft haze):
+ * centred heading and the three steps (white circle icons, orange arrows between them). The slanted orange band
+ * with the numbers hangs over its bottom edge.
  */
 export const ProcessSection = ({ data }: { data?: ProcessData }) => {
   if (!data) return null;
@@ -18,9 +36,15 @@ export const ProcessSection = ({ data }: { data?: ProcessData }) => {
   return (
     <section id={data.id} className={`relative bg-[var(--color-bg-main)] ${scrollMargin} ${sectionSpaceBottom}`}>
       <div className="relative overflow-hidden bg-[var(--color-navy-process)] pb-36 pt-16 sm:pb-40 sm:pt-20 lg:pb-[12.75rem] lg:pt-[9.75rem]">
-        {/* the workshop photo under a navy layer: darker on the left behind the text, clearer on the right */}
-        <div className="absolute inset-0">
-          <Image src={data.image} alt={data.imageAlt} fill quality={75} sizes="100vw" className="object-cover object-[center_30%]" />
+        {/*
+          The workshop under a navy layer. Phones and tablets: the photo fills the band. 1024px up: a blurred copy
+          fills it (the workshop's haze) and the sharp mechanic stands on the right, fading into it, like the design.
+        */}
+        <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
+          <Image src={data.image} alt="" fill quality={75} sizes="100vw" className="object-cover object-[60%_25%] lg:scale-110 lg:object-[center_35%] lg:opacity-80 lg:blur-[1.25rem]" />
+        </div>
+        <div className="absolute right-[17.5rem] top-0 hidden aspect-[600/825] h-[46rem] [mask-image:radial-gradient(closest-side,black_62%,transparent)] lg:block">
+          <Image src={data.image} alt={data.imageAlt} fill quality={90} sizes="27vw" className="object-cover" />
         </div>
         <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-[var(--color-process-overlay)] via-[var(--color-process-overlay)] to-[var(--color-process-overlay-soft)]" />
 
@@ -35,25 +59,25 @@ export const ProcessSection = ({ data }: { data?: ProcessData }) => {
           <p className={`mx-auto mt-4 max-w-[40rem] font-sans text-[var(--color-white)] ${introSize} lg:mt-[0.85rem] lg:max-w-none lg:text-[1.8rem] lg:font-medium lg:leading-none`}>{data.description}</p>
         </div>
 
-        <ol className={`relative mx-auto mt-12 grid max-w-[44rem] gap-8 ${sidePadding} sm:gap-10 lg:mt-[3.31rem] lg:flex lg:max-w-none lg:items-center lg:gap-0 lg:pl-[3.44rem] lg:pr-[1.25rem]`}>
+        <ol className={`relative mx-auto mt-12 grid max-w-[44rem] gap-8 ${sidePadding} sm:gap-10 lg:mt-[3.31rem] lg:flex lg:max-w-none lg:items-center lg:gap-0 lg:pl-[3.31rem] lg:pr-0`}>
           {data.steps.map((step, index) => (
             <Fragment key={step.id}>
               {index > 0 && (
-                <li aria-hidden="true" className="hidden shrink-0 text-[var(--color-orange)] lg:-ml-[0.3rem] lg:mr-[1.55rem] lg:block">
-                  <Icon name="TbChevronRight" className="size-[3.6rem]" strokeWidth={3.4} />
+                <li aria-hidden="true" className={`hidden shrink-0 text-[var(--color-orange)] lg:block ${arrowWidths[index - 1] ?? ""}`}>
+                  <StepArrow />
                 </li>
               )}
-              <li data-reveal data-reveal-delay={index * 120} className={`group flex items-center ${stepWidths[index] ?? ""} lg:shrink-0`}>
-                <span className="grid size-24 shrink-0 place-items-center rounded-full border-2 border-[var(--color-white-50)] bg-[var(--color-navy-deep)] sm:size-28 lg:size-[9.875rem] lg:border-[0.19rem]">
+              <li data-reveal data-reveal-delay={index * 120} className={`group flex items-center ${stepLayout[index]?.width ?? ""} lg:shrink-0`}>
+                <span className="grid size-24 shrink-0 place-items-center rounded-full border-2 border-[var(--color-white-50)] bg-[var(--color-navy-deep)] sm:size-28 lg:size-[10rem] lg:border-[max(2px,0.125rem)] lg:bg-[var(--color-white-10)]">
                   <span className="grid size-[5.2rem] place-items-center rounded-full bg-[var(--color-white)] text-[var(--color-orange)] transition-transform duration-300 group-hover:scale-105 sm:size-24 lg:size-[8.375rem]">
                     <Icon name={step.icon} className="size-10 lg:size-[4.4rem]" strokeWidth={1.7} />
                   </span>
                 </span>
-                <span aria-hidden="true" className="ml-4 h-16 w-px shrink-0 bg-[var(--color-white-80)] lg:ml-[1rem] lg:h-[6.25rem] lg:w-[0.1rem]" />
-                <div className="ml-4 min-w-0 lg:ml-[1.75rem]">
-                  <h3 className="font-sans text-[1.2rem] font-extrabold leading-tight tracking-[-0.02em] text-[var(--color-white)] lg:whitespace-nowrap lg:text-[1.65rem] lg:leading-none lg:tracking-[-0.03em]">{step.title}</h3>
+                <span aria-hidden="true" className={`ml-4 h-16 w-px shrink-0 bg-[var(--color-white-80)] lg:h-[6.125rem] lg:w-[0.1rem] ${stepLayout[index]?.line ?? ""}`} />
+                <div className={`ml-4 min-w-0 lg:mt-[0.6rem] ${stepLayout[index]?.text ?? ""}`}>
+                  <h3 className="font-sans text-[1.2rem] font-extrabold leading-tight tracking-[-0.02em] text-[var(--color-white)] lg:whitespace-nowrap lg:text-[1.72rem] lg:font-bold lg:leading-none lg:tracking-[-0.01em]">{step.title}</h3>
                   {/* the design's line breaks (\n in the JSON) are kept from 640px up */}
-                  <p className="mt-1.5 font-sans text-[0.95rem] leading-[1.55] text-[var(--color-white-90)] sm:whitespace-pre-line sm:text-base lg:mt-[0.65rem] lg:whitespace-pre lg:text-[1.4rem] lg:font-medium lg:leading-[2.2rem] lg:tracking-[-0.025em]">
+                  <p className={`mt-1.5 font-sans text-[0.95rem] leading-[1.55] text-[var(--color-white-90)] sm:whitespace-pre-line sm:text-base lg:mt-[0.85rem] lg:whitespace-pre lg:font-medium lg:leading-[2.3rem] ${stepLayout[index]?.copy ?? copyDefault}`}>
                     {step.text}
                   </p>
                 </div>

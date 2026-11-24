@@ -27,14 +27,15 @@ const columnClass = "grid gap-4 sm:gap-5 lg:w-[35.25rem] lg:shrink-0 lg:gap-[2.4
 
 /**
  * Centred heading; three points on each side of the mechanic in front of the car (orange arc behind him), the photo
- * standing on the bottom edge of the section. Phones and tablets: three points, the photo, the other three.
+ * standing on the bottom edge of the section (on the navy "How It Works" band, like the design). Phones and tablets:
+ * three points, the photo, the other three, then the whole gap between sections before the navy band.
  */
 export const WhySection = ({ data }: { data?: WhyData }) => {
   if (!data) return null;
   const half = Math.ceil(data.points.length / 2);
 
   return (
-    <section id={data.id} className={`bg-[var(--color-bg-main)] pb-8 sm:pb-10 lg:pb-0 ${scrollMargin} ${sectionSpaceTop}`}>
+    <section id={data.id} className={`bg-[var(--color-bg-main)] pb-16 sm:pb-20 lg:pb-0 ${scrollMargin} ${sectionSpaceTop}`}>
       <div data-reveal className={`text-center ${sidePadding} lg:px-0`}>
         <Eyebrow
           label={data.label}

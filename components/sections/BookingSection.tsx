@@ -1,6 +1,6 @@
 import type { BookingData } from "@/types/templates.types";
 import { introSize, TitleWords, titleSize } from "@/components/ui/SectionHeading";
-import { scrollMargin, sectionSpace, sidePadding } from "@/components/ui/sectionSpace";
+import { scrollMargin, sectionGapBottom, sectionSpaceTop, sidePadding } from "@/components/ui/sectionSpace";
 import { Icon } from "@/components/ui/Icon";
 import { BookingForm } from "@/components/sections/BookingForm";
 
@@ -10,15 +10,15 @@ type Props = {
   serviceOptions: string[];
 };
 
-/** Orange car between two navy lines, the centred title and text, then the booking form on a light panel */
+/** Orange car between two navy lines, the centred title and text, then the booking form; the footer follows after the whole gap between sections */
 export const BookingSection = ({ data, serviceOptions }: Props) => {
   if (!data) return null;
   const line = <span aria-hidden="true" className="h-[0.2rem] w-12 shrink-0 bg-[var(--color-navy)] sm:w-16 lg:h-[0.25rem] lg:w-[6.7rem]" />;
 
   return (
-    <section id={data.id} className={`bg-[var(--color-bg-main)] ${scrollMargin} ${sectionSpace}`}>
+    <section id={data.id} className={`bg-[var(--color-bg-main)] ${scrollMargin} ${sectionSpaceTop} ${sectionGapBottom}`}>
       <div className={`${sidePadding} lg:px-[5.94rem]`}>
-        <div className="mx-auto max-w-[44rem] rounded-[1.75rem] px-5 py-10 sm:px-10 sm:py-12 lg:max-w-none lg:rounded-[2rem] lg:px-0 lg:pb-[2.6rem] lg:pl-[4.19rem] lg:pr-[3.56rem] lg:pt-[2rem]">
+        <div className="mx-auto max-w-[44rem] px-1 sm:px-6 lg:max-w-none lg:px-0 lg:pl-[4.19rem] lg:pr-[3.56rem]">
           {/* the design centres this heading 20px left of the form's middle */}
           <div data-reveal className="text-center lg:pr-[2.5rem]">
             <div className="flex items-center justify-center gap-4 text-[var(--color-orange)] lg:gap-0">

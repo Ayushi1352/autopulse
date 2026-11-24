@@ -16,7 +16,7 @@
   --color-navy-process: #062253;
   /* the navy layer over the "How It Works" photo (stronger on the left, behind the text) */
   --color-process-overlay: rgba(6, 44, 104, 0.8);
-  --color-process-overlay-soft: rgba(10, 52, 116, 0.6);
+  --color-process-overlay-soft: rgba(4, 36, 88, 0.74);
   --color-navy-icon: #000e25;
   --color-navy-footer: #021830;
   /* the contact card */
@@ -41,6 +41,8 @@
   --color-white-90: rgba(255, 255, 255, 0.9);
   --color-white-80: rgba(255, 255, 255, 0.8);
   --color-white-50: rgba(255, 255, 255, 0.5);
+  /* the see-through ring round the "How It Works" step icons */
+  --color-white-10: rgba(255, 255, 255, 0.1);
   --color-white-30: rgba(255, 255, 255, 0.3);
 
   /* Backgrounds and borders */
@@ -54,7 +56,7 @@
   /* Shown on both sides of the page when the screen is wider than 1920px (or the browser is zoomed out). */
   --color-bg-backdrop: #eef0f4;
   --color-border: #e6e6e8;
-  --color-border-field: #cfd2d8;
+  --color-border-field: #bdc0c8;
   --color-border-tab: #d9dbe0;
   --color-divider: #b8bcc1;
   --color-divider-light: #d5d8dd;

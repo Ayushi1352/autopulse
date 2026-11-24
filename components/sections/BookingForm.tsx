@@ -10,9 +10,9 @@ import { buttonArrow, buttonClass } from "@/components/ui/buttonStyles";
 
 /** Fields are a navy icon and the text on a grey line (no box), like the design */
 const base =
-  "w-full appearance-none rounded-none border-0 border-b-2 border-[var(--color-border-field)] bg-transparent pl-12 pr-3 font-display text-[1rem] text-[var(--color-ink-soft)] font-medium outline-none transition-colors placeholder:text-[var(--color-ink-soft)] focus:border-[var(--color-orange)] lg:border-b-[0.125rem] lg:pl-[4.69rem] lg:pr-[1rem] lg:text-[1.58rem]";
+  "w-full appearance-none rounded-none border-0 border-b-2 border-[var(--color-border-field)] bg-transparent pl-12 pr-3 font-display text-[1rem] text-[var(--color-ink-soft)] font-medium outline-none transition-colors placeholder:text-[var(--color-ink-soft)] focus:border-[var(--color-orange)] lg:border-b-[max(2px,0.1875rem)] lg:pl-[4.69rem] lg:pr-[1rem] lg:text-[1.58rem]";
 const field = `${base} h-14 lg:h-[3.75rem]`;
-const iconClass = "pointer-events-none absolute left-1 size-6 text-[var(--color-navy)] lg:left-[0.8rem] lg:size-[2.6rem]";
+const iconClass = "pointer-events-none absolute left-1 size-6 text-[var(--color-navy)] lg:left-[0.45rem] lg:size-[3.1rem]";
 
 const Field = ({ name, type = "text", field: data, autoComplete }: { name: string; type?: string; field: FormField; autoComplete?: string }) => (
   <label className="relative flex items-center">

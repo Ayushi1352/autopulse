@@ -26,13 +26,24 @@ export interface SocialLink extends LinkItem {
   icon: string;
 }
 
+/** A phone number, e-mail or address with its icon (shared by the header's top bar and the contact card) */
+export interface ContactItem {
+  id: string;
+  icon: string;
+  title: string;
+  lines: string[];
+  url: string;
+  /** shorter text for the header's top bar (the address as just its city); the lines are used without it */
+  topbarText?: string;
+}
+
 export interface CompanyData {
   logo: string;
-  /** the same logo with white letters, for the dark footer */
-  logoLight: string;
   logoAlt: string;
   logoWidth: number;
   logoHeight: number;
+  /** the business's phone, e-mail and address, written once for the whole site */
+  contactItems: ContactItem[];
   socialLinks: SocialLink[];
 }
 
@@ -51,20 +62,10 @@ export interface FooterData {
   copyrightText: string;
 }
 
-/** A phone number, e-mail or address with its icon (top bar, contact card) */
-export interface ContactItem {
-  id: string;
-  icon: string;
-  title: string;
-  lines: string[];
-  url: string;
-}
-
 export interface HeaderData {
   logoUrl: string;
   homeLabel: string;
   topbarLabel: string;
-  topbarItems: ContactItem[];
   navLinks: LinkItem[];
   buttonText: string;
   buttonUrl: string;
@@ -250,7 +251,6 @@ export interface ContactData extends SplitTitle {
   /** from 1024px up: the design's own photo with the orange arc (the card's right part, 894 × 899 of the 1920px design) */
   imageDesktop: string;
   imageAlt: string;
-  items: ContactItem[];
 }
 
 export interface FormField {

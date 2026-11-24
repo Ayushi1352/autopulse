@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
   partialPrefetching: true,
   images: {
     formats: ["image/webp"],
-    qualities: [75, 90],
+    qualities: [75, 90, 95],
   },
 };
 

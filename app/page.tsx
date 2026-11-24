@@ -12,6 +12,7 @@ import { BookingSection } from "@/components/sections/BookingSection";
 
 const templateData: AutoPulseTemplateData = rawData;
 const sectionData = templateData.categories.Automotive.sections;
+const commonData = templateData.common;
 const servicesData = sectionData.Services?.variants?.AutomotiveServices1;
 const bookingData = sectionData.Booking?.variants?.AutomotiveBooking1;
 
@@ -32,7 +33,7 @@ export default function Home() {
       <ProcessSection data={sectionData.Process?.variants?.AutomotiveProcess1} />
       <TestimonialsSection data={sectionData.Testimonials?.variants?.AutomotiveTestimonials1} />
       <FaqSection data={sectionData.Faq?.variants?.AutomotiveFaq1} />
-      <ContactSection data={sectionData.Contact?.variants?.AutomotiveContact1} />
+      <ContactSection data={sectionData.Contact?.variants?.AutomotiveContact1} company={commonData.company} />
       <BookingSection data={bookingData} serviceOptions={serviceOptions} />
     </main>
   );

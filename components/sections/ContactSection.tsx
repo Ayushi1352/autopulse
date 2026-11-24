@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { ContactData } from "@/types/templates.types";
+import type { CompanyData, ContactData } from "@/types/templates.types";
 import { Eyebrow, labelSize, TitleWords } from "@/components/ui/SectionHeading";
 import { scrollMargin, sectionSpace, sidePadding } from "@/components/ui/sectionSpace";
 import { Icon } from "@/components/ui/Icon";
@@ -8,14 +8,15 @@ import { Icon } from "@/components/ui/Icon";
  * One big navy card: the label, the two-line title ("Support?" in orange), the text and the phone, e-mail and address
  * on the left; the support agent behind an orange arc on the right (phones and tablets: under the text).
  */
-export const ContactSection = ({ data }: { data?: ContactData }) => {
+export const ContactSection = ({ data, company }: { data?: ContactData; company: CompanyData }) => {
   if (!data) return null;
 
   return (
     <section id={data.id} className={`bg-[var(--color-bg-main)] ${scrollMargin} ${sectionSpace}`}>
       <div className={`${sidePadding} lg:px-0 lg:pl-[4.125rem] lg:pr-[4.19rem]`}>
         <div data-reveal className="relative mx-auto max-w-[44rem] overflow-hidden rounded-[1.75rem] bg-[var(--color-navy-contact)] lg:h-[56.125rem] lg:max-w-none lg:rounded-[2.5rem]">
-          <div className="relative px-6 pb-4 pt-10 sm:px-10 sm:pt-12 lg:p-0 lg:pl-[5.69rem] lg:pt-[3.9rem]">
+          {/* above the desktop photo, whose navy left part would otherwise hide the end of the long title line */}
+          <div className="relative z-[1] px-6 pb-4 pt-10 sm:px-10 sm:pt-12 lg:p-0 lg:pl-[5.69rem] lg:pt-[3.9rem]">
             <Eyebrow
               label={data.label}
               className={`${labelSize} lg:text-[2.6rem]`}
@@ -31,7 +32,7 @@ export const ContactSection = ({ data }: { data?: ContactData }) => {
             </p>
 
             <ul className="mt-8 lg:ml-[0.56rem] lg:mt-[2.85rem] lg:w-[41.9rem]">
-              {data.items.map((item, index) => {
+              {company.contactItems.map((item, index) => {
                 const external = item.url.startsWith("http");
                 return (
                   <li

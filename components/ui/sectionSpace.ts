@@ -1,15 +1,25 @@
 /**
- * Space above and below every section's content. Each section uses exactly this, so the gap between any two
- * sections is the same (twice this) at every screen size: 64px on phones, 80px on tablets, and from 1024px up
- * 4rem, which scales with the design like everything else (128px between sections on a 1920px screen).
+ * Space between sections. Every section keeps exactly the same empty space between its content and the next
+ * section's content, on every screen:
+ *   phones 64px · tablets 80px · from 1024px up 8rem (scales with the design: 128px on a 1920px screen,
+ *   96px at 1440px) but never less than the tablet's 80px.
+ * Two white sections each add half of it (`sectionSpace`). Where a section meets a coloured edge (the hero's navy
+ * shape, the "How It Works" navy band, the footer) the white side carries the whole gap on its own (`sectionGap…`),
+ * so the empty space is the same there too.
  */
-export const sectionSpace = "py-8 sm:py-10 lg:py-[4rem]";
+export const sectionSpace = "py-8 sm:py-10 lg:py-[max(40px,4rem)]";
 
-/** Only the space above (a section whose last piece sits on the next section, like the Why photo) */
-export const sectionSpaceTop = "pt-8 sm:pt-10 lg:pt-[4rem]";
+/** Only the half gap above (a section whose bottom is handled on its own) */
+export const sectionSpaceTop = "pt-8 sm:pt-10 lg:pt-[max(40px,4rem)]";
 
-/** Only the space below (the process band hangs out of its section; this keeps the gap after it the same) */
-export const sectionSpaceBottom = "pb-8 sm:pb-10 lg:pb-[4rem]";
+/** Only the half gap below (a section whose top is handled on its own) */
+export const sectionSpaceBottom = "pb-8 sm:pb-10 lg:pb-[max(40px,4rem)]";
+
+/** Half gap as an outer margin below (the hero: its navy shape must end at its own bottom edge) */
+export const sectionMarginBottom = "mb-8 sm:mb-10 lg:mb-[max(40px,4rem)]";
+
+/** The whole gap below, for a section followed by a coloured edge (the footer) */
+export const sectionGapBottom = "pb-16 sm:pb-20 lg:pb-[max(80px,8rem)]";
 
 /** The fixed header's height, so a menu link scrolls its section to just below the header */
 export const scrollMargin = "scroll-mt-[4.5rem] sm:scroll-mt-[5.5rem] lg:scroll-mt-[6rem]";
