@@ -26,7 +26,6 @@
   --color-ink-soft: #0f1425;
   /* Orange (the logo's "Pulse": labels, buttons, icons) */
   --color-orange: #fe5a02;
-  --color-orange-dark: #e24d00;
   --color-orange-bright: #ff7302;
   /* the slanted band of numbers under "How It Works" */
   --color-orange-band: #da5005;
@@ -52,7 +51,6 @@
   --color-bg-peach: #fef9f7;
   --color-bg-peach-icon: #fdeee7;
   --color-bg-faq-answer: #f7f8fa;
-  --color-bg-form: #fbfbfc;
   /* Shown on both sides of the page when the screen is wider than 1920px (or the browser is zoomed out). */
   --color-bg-backdrop: #eef0f4;
   --color-border: #e6e6e8;
@@ -61,11 +59,8 @@
   --color-divider: #b8bcc1;
   --color-divider-light: #d5d8dd;
   --color-dot: #5f6878;
-  /* hero: the soft light behind the car */
-  --color-hero-glow: #eef1f6;
 
   /* Shadows */
-  --color-shadow: rgba(3, 10, 31, 0.08);
   --color-shadow-strong: rgba(3, 10, 31, 0.16);
   --color-shadow-orange: rgba(254, 90, 2, 0.35);
   --color-overlay-menu: rgba(3, 10, 31, 0.45);
