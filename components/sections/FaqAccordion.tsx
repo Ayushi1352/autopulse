@@ -26,7 +26,7 @@ export const FaqAccordion = ({ items }: { items: FaqItem[] }) => {
                 aria-expanded={isOpen}
                 aria-controls={`faq-answer-${item.id}`}
                 onClick={() => setOpen(isOpen ? "" : item.id)}
-                className={`group flex min-h-[3.75rem] w-full items-center justify-between gap-4 px-4 py-3 text-left font-sans text-[1rem] font-bold leading-snug transition-colors duration-300 sm:px-5 sm:text-[1.1rem] lg:min-h-[4.5rem] lg:py-[0.5rem] lg:pl-[2.125rem] lg:pr-[1.875rem] lg:text-[1.65rem] ${
+                className={`group flex min-h-[3.75rem] w-full items-center justify-between gap-4 px-4 py-3 text-left font-sans text-[1rem] font-bold leading-snug transition-colors duration-300 sm:px-5 sm:text-[1.1rem] lg:min-h-[4.5rem] lg:py-[0.5rem] lg:pl-[2.125rem] lg:pr-[1.875rem] lg:text-[1.45rem] ${
                   isOpen ? "rounded-xl bg-[var(--color-navy-deep)] text-[var(--color-white)] lg:rounded-[0.75rem]" : "text-[var(--color-ink)] hover:text-[var(--color-orange)]"
                 }`}
               >

@@ -5,39 +5,37 @@ import { scrollMargin, sectionSpace, sidePadding } from "@/components/ui/section
 import { Icon } from "@/components/ui/Icon";
 
 /**
- * One big navy card: the label, the two-line title ("Support?" in orange), the text and the phone, e-mail and address
- * on the left; the support agent behind an orange arc on the right (phones and tablets: under the text).
+ * Compact navy card: the label, two-line title ("Support?" in orange), description and phone, e-mail and address
+ * on the left; the support agent framed cleanly behind a vector orange arc on the right (phones and tablets: under the text).
  */
 export const ContactSection = ({ data, company }: { data?: ContactData; company: CompanyData }) => {
   if (!data) return null;
 
   return (
     <section id={data.id} className={`bg-[var(--color-bg-main)] ${scrollMargin} ${sectionSpace}`}>
-      <div className={`${sidePadding} lg:px-0 lg:pl-[4.125rem] lg:pr-[4.19rem]`}>
-        <div data-reveal className="relative mx-auto max-w-[44rem] overflow-hidden rounded-[1.75rem] bg-[var(--color-navy-contact)] lg:h-[56.125rem] lg:max-w-none lg:rounded-[2.5rem]">
-          {/* above the desktop photo, whose navy left part would otherwise hide the end of the long title line */}
-          <div className="relative z-[1] px-6 pb-4 pt-10 sm:px-10 sm:pt-12 lg:p-0 lg:pl-[5.69rem] lg:pt-[3.9rem]">
-            <Eyebrow
-              label={data.label}
-              className={`${labelSize} lg:text-[2.6rem]`}
-              lineClassName="h-[0.2rem] w-10 sm:w-12 lg:h-[0.25rem] lg:w-[5.2rem]"
-              gapClassName="gap-4 lg:gap-[1.375rem]"
-            />
-            <h2 className="mt-4 font-heading text-[length:min(2.3rem,calc((100vw-2rem)/10.5))] font-extrabold leading-[1.15] tracking-[-0.01em] text-[var(--color-white)] sm:text-[3.1rem] lg:-ml-[0.1rem] lg:mt-[1.6rem] lg:text-[5.2rem] lg:leading-[5.125rem]">
-              <TitleWords data={data} accentClassName="block" />
+      <div className={`${sidePadding} lg:mx-auto lg:max-w-[104rem] lg:px-[2rem]`}>
+        <div
+          data-reveal
+          className="relative mx-auto max-w-[44rem] overflow-hidden rounded-[1.5rem] bg-[var(--color-navy-contact)] lg:flex lg:min-h-[37rem] lg:max-w-none lg:items-center lg:rounded-[2rem]"
+        >
+          {/* Left column: eyebrow, 2-line heading, intro, and compact contact list */}
+          <div className="relative z-[2] px-5 pb-6 pt-8 sm:px-8 sm:pt-10 lg:w-[54%] lg:py-[3rem] lg:pl-[4.5rem] lg:pr-[2rem]">
+            <Eyebrow label={data.label} className={labelSize} />
+            <h2 className="mt-3 font-heading text-[length:min(1.85rem,calc((100vw-4.5rem)/12.2))] font-extrabold leading-[1.18] tracking-[-0.01em] text-[var(--color-white)] sm:text-[2.65rem] lg:mt-[1rem] lg:text-[3.5rem] lg:leading-[1.15]">
+              <TitleWords data={data} topClassName="max-sm:whitespace-nowrap" accentClassName="block" />
             </h2>
             {/* the design's line breaks (\n in the JSON) are kept from 640px up */}
-            <p className="mt-4 font-display text-base leading-[1.6] text-[var(--color-white)] sm:whitespace-pre-line sm:text-lg lg:ml-[0.3rem] lg:mt-[1.35rem] lg:text-[2.07rem] lg:leading-[2.56rem] lg:tracking-[-0.01em]">
+            <p className="mt-3 font-display text-[0.95rem] leading-[1.55] text-[var(--color-white-90)] sm:whitespace-pre-line sm:text-base lg:mt-[0.9rem] lg:text-[1.35rem] lg:leading-[1.9rem]">
               {data.description}
             </p>
 
-            <ul className="mt-8 lg:ml-[0.56rem] lg:mt-[2.85rem] lg:w-[41.9rem]">
+            <ul className="mt-6 lg:mt-[1.85rem] lg:max-w-[34rem]">
               {company.contactItems.map((item, index) => {
                 const external = item.url.startsWith("http");
                 return (
                   <li
                     key={item.id}
-                    className={index > 0 ? "mt-4 border-t border-[var(--color-white-30)] pt-4 lg:mt-[1.15rem] lg:pt-[1.15rem]" : ""}
+                    className={index > 0 ? "mt-3 border-t border-[var(--color-white-30)] pt-3 lg:mt-[0.85rem] lg:pt-[0.85rem]" : ""}
                   >
                     <a
                       href={item.url}
@@ -46,13 +44,13 @@ export const ContactSection = ({ data, company }: { data?: ContactData; company:
                       aria-label={`${item.title}: ${item.lines.join(" ")}`}
                       className="group flex items-center"
                     >
-                      <span className="grid size-14 shrink-0 place-items-center rounded-xl bg-[var(--color-white)] text-[var(--color-orange)] transition-[transform,background-color,color] duration-300 group-hover:scale-105 group-hover:bg-[var(--color-orange)] group-hover:text-[var(--color-white)] sm:size-16 lg:size-[6.56rem] lg:rounded-[1rem]">
-                        <Icon name={item.icon} className="size-6 lg:size-[2.9rem]" />
+                      <span className="grid size-11 shrink-0 place-items-center rounded-lg bg-[var(--color-white)] text-[var(--color-orange)] transition-[transform,background-color,color] duration-300 group-hover:scale-105 group-hover:bg-[var(--color-orange)] group-hover:text-[var(--color-white)] sm:size-12 lg:size-[4.15rem] lg:rounded-[0.75rem]">
+                        <Icon name={item.icon} className="size-5 lg:size-[1.85rem]" />
                       </span>
-                      <span aria-hidden="true" className="ml-4 h-12 w-px shrink-0 bg-[var(--color-white-80)] lg:ml-[2.25rem] lg:h-[6.25rem] lg:w-[0.1rem]" />
-                      <span className="ml-4 min-w-0 break-words text-[var(--color-white)] lg:ml-[2.1rem]">
-                        <span className="block font-sans text-[1.1rem] font-extrabold leading-tight tracking-[-0.02em] lg:text-[2.1rem] lg:leading-none">{item.title}</span>
-                        <span className="mt-1 block font-sans text-[0.95rem] leading-[1.45] transition-colors group-hover:text-[var(--color-orange-bright)] sm:text-base lg:mt-[0.7rem] lg:text-[2.125rem] lg:leading-[2.65rem] lg:tracking-[-0.01em]">
+                      <span aria-hidden="true" className="ml-3.5 h-10 w-px shrink-0 bg-[var(--color-white-80)] lg:ml-[1.4rem] lg:h-[3.85rem]" />
+                      <span className="ml-3.5 min-w-0 break-words text-[var(--color-white)] lg:ml-[1.4rem]">
+                        <span className="block font-sans text-[1rem] font-bold leading-tight lg:text-[1.4rem] lg:leading-none">{item.title}</span>
+                        <span className="mt-0.5 block font-sans text-[0.9rem] leading-[1.45] transition-colors group-hover:text-[var(--color-orange-bright)] sm:text-[0.95rem] lg:mt-[0.35rem] lg:text-[1.3rem] lg:leading-[1.65rem]">
                           {item.lines.map((line) => (
                             <span key={line} className="block lg:whitespace-nowrap">
                               {line}
@@ -67,13 +65,26 @@ export const ContactSection = ({ data, company }: { data?: ContactData; company:
             </ul>
           </div>
 
-          {/* phones and tablets: the photo under the text */}
-          <div className="relative mt-4 aspect-[1269/1240] w-full lg:hidden">
-            <Image src={data.image} alt={data.imageAlt} fill quality={90} sizes="(min-width: 640px) 44rem, 100vw" className="object-cover object-[center_30%]" />
+          {/* phones and tablets: clean support agent photo under the text with an orange top accent */}
+          <div className="relative mt-2 aspect-[4/3] w-full overflow-hidden border-t-[0.35rem] border-[var(--color-orange)] sm:aspect-[16/11] lg:hidden">
+            <Image src={data.image} alt={data.imageAlt} fill quality={90} sizes="(min-width: 640px) 44rem, 100vw" className="object-cover object-[center_12%]" />
           </div>
-          {/* 1024px up: the design's own photo behind its orange arc, filling the card's right part */}
-          <div className="absolute right-0 top-0 hidden h-full w-[55.875rem] lg:block">
-            <Image src={data.imageDesktop} alt={data.imageAlt} fill quality={90} sizes="47vw" className="object-cover object-left" />
+          {/* 1024px up: clean photo inside a vector orange-bordered curved frame (no screenshot crop) */}
+          <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[48%] lg:block">
+            <div className="absolute right-[-11rem] top-1/2 aspect-square h-[156%] -translate-y-1/2 overflow-hidden rounded-full border-[1rem] border-[var(--color-orange)] bg-[var(--color-navy-contact)]">
+              <div className="relative size-full">
+                <div className="absolute inset-y-[18%] left-0 right-[11rem]">
+                  <Image
+                    src={data.image}
+                    alt={data.imageAlt}
+                    fill
+                    quality={90}
+                    sizes="(min-width: 1024px) 44vw, 100vw"
+                    className="object-cover object-[center_10%]"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

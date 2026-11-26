@@ -9,13 +9,13 @@ import type { SplitTitle } from "@/types/templates.types";
  * Size of every section title on phones and tablets, so all titles match (desktop sizes follow the design per section).
  * Phones: shrinks with the screen width so the longest title line still fits; tablets: 2.75rem.
  */
-export const titleSize = "text-[length:min(2.1rem,calc((100vw-2rem)/12))] leading-[1.18] sm:text-[2.75rem]";
+export const titleSize = "text-[length:min(2.1rem,calc((100vw-2rem)/12))] leading-[1.18] sm:text-[2.75rem] lg:text-[3.5rem] lg:leading-[1.18]";
 
-/** Size of every section label ("About Us", "Our Services"…) on phones and tablets */
-export const labelSize = "text-[1.05rem] sm:text-[1.25rem]";
+/** Size of every section label ("About Us", "Our Services"…) across breakpoints */
+export const labelSize = "text-[1.05rem] sm:text-[1.25rem] lg:text-[1.65rem]";
 
-/** Size of the text under a title on phones and tablets */
-export const introSize = "text-base leading-[1.6] sm:text-lg";
+/** Size of the text under a title across breakpoints */
+export const introSize = "text-base leading-[1.6] sm:text-lg lg:text-[1.45rem] lg:leading-[1.6]";
 
 type EyebrowProps = {
   label: string;
@@ -37,8 +37,8 @@ export const Eyebrow = ({
   lines = "both",
   className = "",
   toneClassName = "font-bold text-[var(--color-orange)]",
-  lineClassName = "h-[0.125rem] w-10 sm:w-12",
-  gapClassName = "gap-3 sm:gap-4",
+  lineClassName = "h-[0.15rem] w-10 sm:w-12 lg:h-[0.2rem] lg:w-[3.25rem]",
+  gapClassName = "gap-3 sm:gap-4 lg:gap-[1.25rem]",
 }: EyebrowProps) => {
   const line = <span aria-hidden="true" className={`shrink-0 bg-[var(--color-orange)] ${lineClassName}`} />;
   return (
@@ -51,9 +51,17 @@ export const Eyebrow = ({
 };
 
 /** The title's words in ink with the highlighted words in orange ("The AutoPulse Advantage") */
-export const TitleWords = ({ data, accentClassName = "" }: { data: SplitTitle; accentClassName?: string }) => (
+export const TitleWords = ({
+  data,
+  topClassName = "",
+  accentClassName = "",
+}: {
+  data: SplitTitle;
+  topClassName?: string;
+  accentClassName?: string;
+}) => (
   <>
-    {data.titleTop} <span className={`text-[var(--color-orange)] ${accentClassName}`}>{data.titleAccent}</span>
+    <span className={topClassName}>{data.titleTop}</span> <span className={`text-[var(--color-orange)] ${accentClassName}`}>{data.titleAccent}</span>
     {data.titleEnd ? ` ${data.titleEnd}` : null}
   </>
 );

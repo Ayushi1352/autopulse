@@ -36,28 +36,28 @@ const Card = ({ item, ratingLabel, featured, className = "" }: CardProps) => (
     )}
     {/* the design's line breaks (\n in the JSON) are kept from 1024px up */}
     <blockquote
-      className={`font-quote text-[1.1rem] leading-[1.5] sm:text-[1.2rem] lg:whitespace-pre-line ${featured ? "lg:text-[2rem] lg:leading-[2.47rem]" : "mt-1 lg:-mt-[0.4rem] lg:text-[1.89rem] lg:leading-[2.4rem]"}`}
+      className={`font-quote text-[1.05rem] leading-[1.55] sm:text-[1.15rem] lg:whitespace-pre-line ${featured ? "lg:text-[1.75rem] lg:leading-[2.3rem]" : "mt-1 lg:-mt-[0.2rem] lg:text-[1.68rem] lg:leading-[2.2rem]"}`}
     >
       {item.highlight && <strong className="font-normal">{item.highlight} </strong>}
       {item.quote}
     </blockquote>
     <span aria-hidden="true" className={`mt-6 block h-px lg:mt-[1.85rem] ${featured ? "bg-[var(--color-white-50)]" : "bg-[var(--color-divider-light)]"}`} />
-    <figcaption className="mt-5 flex items-center gap-5 lg:mt-[1.3rem] lg:gap-[2.375rem]">
-      <span className="relative size-20 shrink-0 overflow-hidden rounded-full border-[0.19rem] border-[var(--color-orange)] bg-[var(--color-white)] p-[0.2rem] lg:size-[8.125rem] lg:border-[0.25rem]">
+    <figcaption className="mt-5 flex items-center gap-5 lg:mt-[1.3rem] lg:gap-[2rem]">
+      <span className="relative size-20 shrink-0 overflow-hidden rounded-full border-[0.19rem] border-[var(--color-orange)] bg-[var(--color-white)] p-[0.2rem] lg:size-[7.25rem] lg:border-[0.25rem]">
         <span className="relative block size-full overflow-hidden rounded-full">
           <Image src={item.image} alt={item.name} fill quality={90} sizes="(min-width: 1024px) 7vw, 80px" className="object-cover object-[center_30%]" />
         </span>
       </span>
       <span className="min-w-0">
-        <span className={`block font-heading text-[1.2rem] font-extrabold leading-tight lg:text-[1.58rem] lg:leading-none ${featured ? "" : "text-[var(--color-ink)]"}`}>
+        <span className={`block font-heading text-[1.15rem] font-extrabold leading-tight lg:text-[1.45rem] lg:leading-none ${featured ? "" : "text-[var(--color-ink)]"}`}>
           {item.name}
         </span>
-        <span className={`mt-1 block font-quote text-[1.05rem] lg:mt-[0.75rem] lg:text-[1.6rem] lg:leading-none ${featured ? "text-[var(--color-white-90)]" : "text-[var(--color-text-muted)]"}`}>
+        <span className={`mt-1 block font-quote text-[1rem] lg:mt-[0.65rem] lg:text-[1.4rem] lg:leading-none ${featured ? "text-[var(--color-white-90)]" : "text-[var(--color-text-muted)]"}`}>
           {item.location}
         </span>
-        <span className="mt-2 flex gap-1 text-[var(--color-star)] lg:mt-[0.95rem] lg:gap-[0.35rem]" role="img" aria-label={fill(ratingLabel, { stars: item.stars })}>
+        <span className="mt-2 flex gap-1 text-[var(--color-star)] lg:mt-[0.85rem] lg:gap-[0.35rem]" role="img" aria-label={fill(ratingLabel, { stars: item.stars })}>
           {Array.from({ length: item.stars }, (_, n) => (
-            <Icon key={n} name="FaStar" className="size-[1.1rem] lg:size-[1.75rem]" />
+            <Icon key={n} name="FaStar" className="size-[1.05rem] lg:size-[1.5rem]" />
           ))}
         </span>
       </span>
@@ -95,13 +95,13 @@ export const TestimonialSlider = ({ data }: { data: TestimonialsData }) => {
   return (
     <div
       data-reveal
-      className={`relative mx-auto mt-14 max-w-[40rem] ${sidePadding} lg:mt-[6rem] lg:max-w-none lg:px-[7.19rem]`}
+      className={`relative mx-auto mt-14 max-w-[40rem] ${sidePadding} lg:mt-[5rem] lg:max-w-none lg:px-[7.25rem]`}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocus={() => setPaused(true)}
       onBlur={() => setPaused(false)}
     >
-      <div className="grid items-center lg:grid-cols-[33.125rem_34.375rem_33.125rem] lg:gap-[2.5rem]" aria-live="polite">
+      <div className="grid items-center lg:grid-cols-[minmax(0,1fr)_minmax(0,1.038fr)_minmax(0,1fr)] lg:gap-[2.5rem]" aria-live="polite">
         {shown.map(({ item, featured }) => (
           <Card
             // a new key on every move replays the fade-in
@@ -116,7 +116,7 @@ export const TestimonialSlider = ({ data }: { data: TestimonialsData }) => {
 
       {count > 1 && (
         <div className="mt-10 flex items-center justify-center gap-5 lg:mt-[3rem] lg:gap-0">
-          <button type="button" aria-label={data.previousLabel} onClick={() => go(-1)} className={`${arrow} lg:left-[1.75rem]`}>
+          <button type="button" aria-label={data.previousLabel} onClick={() => go(-1)} className={`${arrow} lg:left-[1.6875rem]`}>
             <Icon name="TbChevronLeft" className="size-5 lg:size-[2rem]" strokeWidth={3} />
           </button>
           <div className="flex gap-3 lg:gap-[1rem]">
@@ -131,7 +131,7 @@ export const TestimonialSlider = ({ data }: { data: TestimonialsData }) => {
               />
             ))}
           </div>
-          <button type="button" aria-label={data.nextLabel} onClick={() => go(1)} className={`${arrow} lg:right-[1.69rem]`}>
+          <button type="button" aria-label={data.nextLabel} onClick={() => go(1)} className={`${arrow} lg:right-[1.6875rem]`}>
             <Icon name="TbChevronRight" className="size-5 lg:size-[2rem]" strokeWidth={3} />
           </button>
         </div>

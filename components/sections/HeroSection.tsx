@@ -4,21 +4,21 @@ import { Eyebrow } from "@/components/ui/SectionHeading";
 import { sectionMarginBottom, sidePadding } from "@/components/ui/sectionSpace";
 
 /**
- * Under the header: the navy shape on the left with a slanted right edge (the label with an orange line, the
- * three-line title with "Smoother Drive" in orange, three lines of text) and the mechanic at the open car on white.
- * Phones and tablets: the navy block with the text, its bottom slanted, and the photo under it reaching into the navy.
+ * Under the header: the navy shape on the left (`z-[1]`) with its diagonal edge passing behind the center of the
+ * red tool chest, and the cutout mechanic/car image layered on top (`z-[2]`) on the right.
+ * Phones and tablets: the navy block with the text, its bottom slanted, and the cutout below overlapping it.
  */
 export const HeroSection = ({ data }: { data?: HeroData }) => {
   if (!data) return null;
 
   return (
     <section id={data.id} className={`relative mt-[4.5rem] overflow-hidden bg-[var(--color-bg-main)] sm:mt-[5.5rem] lg:mt-[9.375rem] lg:h-[47.06rem] ${sectionMarginBottom}`}>
-      {/* 1024px up: the navy shape, from 518px at the top to 1045px at the bottom of the 1920px design */}
-      <div aria-hidden="true" className="absolute inset-0 hidden bg-[var(--color-navy)] [clip-path:polygon(0_0,26.98%_0,54.43%_100%,0_100%)] lg:block" />
+      {/* 1024px up: navy shape behind the red tool chest and mechanic (`z-[1]`) */}
+      <div aria-hidden="true" className="absolute inset-0 z-[1] hidden bg-[var(--color-navy)] [clip-path:polygon(0_0,26.98%_0,52.8%_100%,0_100%)] lg:block" />
 
       <div
         data-reveal
-        className={`relative bg-[var(--color-navy)] pb-24 pt-14 [clip-path:polygon(0_0,100%_0,100%_calc(100%-4.5rem),0_100%)] sm:pb-28 sm:pt-20 lg:bg-transparent lg:p-0 lg:pl-[5rem] lg:pt-[13rem] lg:[clip-path:none] ${sidePadding}`}
+        className={`relative z-[3] bg-[var(--color-navy)] pb-24 pt-14 [clip-path:polygon(0_0,100%_0,100%_calc(100%-4.5rem),0_100%)] sm:pb-28 sm:pt-20 lg:bg-transparent lg:p-0 lg:pl-[5rem] lg:pt-[13rem] lg:[clip-path:none] ${sidePadding}`}
       >
         <Eyebrow
           label={data.label}
@@ -44,16 +44,14 @@ export const HeroSection = ({ data }: { data?: HeroData }) => {
         </p>
       </div>
 
-      {/* phones and tablets: the photo with a see-through background under the navy block */}
-      <div className="relative mx-auto mt-6 aspect-[1456/791] w-[calc(100%-2rem)] max-w-[44rem] lg:hidden">
-        <Image src={data.image} alt={data.imageAlt} fill preload quality={90} sizes="(min-width: 640px) 44rem, 92vw" className="object-contain" />
+      {/* phones and tablets: cutout layered cleanly above the slanted navy edge */}
+      <div className="relative z-[2] mx-auto -mt-8 aspect-[16/9] w-[calc(100%-1.5rem)] max-w-[44rem] pb-4 lg:hidden">
+        <Image src={data.image} alt={data.imageAlt} fill preload quality={90} sizes="(min-width: 640px) 44rem, 92vw" className="object-contain object-bottom" />
       </div>
-      {/*
-        1024px up: the design's own photo (the hero's right part, 1120 × 753 of the 1920px design, with the navy
-        shape's corner in it), placed exactly where the design has it so the tool chest stands on the navy shape
-      */}
-      <div className="absolute inset-y-0 left-[47.5rem] hidden w-[70rem] lg:block">
-        <Image src={data.imageDesktop} alt={data.imageAlt} fill preload quality={90} sizes="59vw" className="object-cover" />
+
+      {/* 1024px up: hero image layered ON TOP of (`z-[2]`) the navy shape so the red box stands above the blue diagonal */}
+      <div className="pointer-events-none absolute bottom-[0.5rem] left-[42%] right-[0.5%] z-[2] hidden aspect-[16/9] lg:block">
+        <Image src={data.image} alt={data.imageAlt} fill preload quality={90} sizes="58vw" className="object-contain object-bottom" />
       </div>
     </section>
   );

@@ -10,13 +10,15 @@ import { buttonArrow, buttonClass } from "@/components/ui/buttonStyles";
 
 /** Fields are a navy icon and the text on a grey line (no box), like the design */
 const base =
-  "w-full appearance-none rounded-none border-0 border-b-2 border-[var(--color-border-field)] bg-transparent pl-12 pr-3 font-display text-[1rem] text-[var(--color-ink-soft)] font-medium outline-none transition-colors placeholder:text-[var(--color-ink-soft)] focus:border-[var(--color-orange)] lg:border-b-[max(2px,0.1875rem)] lg:pl-[4.69rem] lg:pr-[1rem] lg:text-[1.58rem]";
-const field = `${base} h-14 lg:h-[3.75rem]`;
-const iconClass = "pointer-events-none absolute left-1 size-6 text-[var(--color-navy)] lg:left-[0.45rem] lg:size-[3.1rem]";
+  "block w-full min-w-0 appearance-none rounded-none border-0 border-b-[1.5px] border-[var(--color-border-field)] bg-transparent pl-9 font-display text-[0.95rem] text-[var(--color-ink-soft)] font-medium outline-none transition-colors placeholder:text-[var(--color-ink-soft)] focus:border-[var(--color-orange)] lg:border-b-[2px] lg:pl-[2.75rem] lg:text-[1.125rem]";
+const inputPadding = "pr-3 lg:pr-[0.75rem]";
+const field = `${base} ${inputPadding} h-11 lg:h-[2.9rem]`;
+const selectField = `${base} h-11 cursor-pointer pr-10 lg:h-[2.9rem] lg:pr-[3.5rem]`;
+const iconClass = "pointer-events-none absolute left-1 size-5 text-[var(--color-navy)] lg:left-[0.35rem] lg:size-[1.6rem]";
 
 const Field = ({ name, type = "text", field: data, autoComplete }: { name: string; type?: string; field: FormField; autoComplete?: string }) => (
-  <label className="relative flex items-center">
-    <Icon name={data.icon} className={iconClass} strokeWidth={2} />
+  <label className="relative block w-full min-w-0">
+    <Icon name={data.icon} className={`${iconClass} top-1/2 -translate-y-1/2`} strokeWidth={2} />
     <input name={name} type={type} required placeholder={data.placeholder} aria-label={data.placeholder} autoComplete={autoComplete} className={field} />
   </label>
 );
@@ -26,8 +28,8 @@ const DateField = ({ name, field: data }: { name: string; field: FormField }) =>
   const [type, setType] = useState("text");
 
   return (
-    <label className="relative flex items-center">
-      <Icon name={data.icon} className={iconClass} strokeWidth={2} />
+    <label className="relative block w-full min-w-0">
+      <Icon name={data.icon} className={`${iconClass} top-1/2 -translate-y-1/2`} strokeWidth={2} />
       <input
         name={name}
         type={type}
@@ -65,14 +67,14 @@ type SelectProps = {
 };
 
 const SelectField = ({ name, field: data, options, value, onChange }: SelectProps) => (
-  <label className="relative flex items-center">
-    <Icon name={data.icon} className={iconClass} strokeWidth={2} />
+  <label className="relative block w-full min-w-0">
+    <Icon name={data.icon} className={`${iconClass} top-1/2 -translate-y-1/2`} strokeWidth={2} />
     <select
       name={name}
       {...(onChange ? { value, onChange: (event: React.ChangeEvent<HTMLSelectElement>) => onChange(event.target.value) } : { defaultValue: "" })}
       required
       aria-label={data.placeholder}
-      className={`${field} cursor-pointer pr-10 lg:pr-[3.5rem]`}
+      className={selectField}
     >
       <option value="" disabled>
         {data.placeholder}
@@ -83,7 +85,7 @@ const SelectField = ({ name, field: data, options, value, onChange }: SelectProp
         </option>
       ))}
     </select>
-    <Icon name="TbChevronDown" className="pointer-events-none absolute right-1 size-5 text-[var(--color-ink)] lg:right-[1.3rem] lg:size-[2rem]" strokeWidth={2.4} />
+    <Icon name="TbChevronDown" className="pointer-events-none absolute right-1 top-1/2 size-4 -translate-y-1/2 text-[var(--color-ink)] lg:right-[0.75rem] lg:size-[1.35rem]" strokeWidth={2.4} />
   </label>
 );
 
@@ -106,7 +108,7 @@ export const BookingForm = ({ data, serviceOptions }: { data: BookingData; servi
       onSubmit={submit.onSubmit}
       onInput={submit.onInput}
       aria-busy={submit.sending}
-      className="mt-10 grid gap-x-10 gap-y-4 sm:grid-cols-2 lg:mt-[5.2rem] lg:gap-x-[5.19rem] lg:gap-y-[2.28rem]"
+      className="mt-8 grid w-full grid-cols-1 gap-x-6 gap-y-3.5 sm:grid-cols-2 lg:mt-[3rem] lg:gap-x-[3.5rem] lg:gap-y-[1.65rem]"
     >
       <Field name="name" field={fields.name} autoComplete="name" />
       <Field name="phone" type="tel" field={fields.phone} autoComplete="tel" />
@@ -114,14 +116,14 @@ export const BookingForm = ({ data, serviceOptions }: { data: BookingData; servi
       <DateField name="date" field={fields.date} />
       <SelectField name="service" field={fields.service} options={serviceOptions} value={service} onChange={setService} />
       <SelectField name="time" field={fields.time} options={data.timeOptions} />
-      <label className="relative block sm:col-span-2">
-        <Icon name={fields.message.icon} className={`${iconClass} top-4 lg:top-[0.85rem]`} strokeWidth={2} />
+      <label className="relative block w-full min-w-0 sm:col-span-2">
+        <Icon name={fields.message.icon} className={`${iconClass} top-2.5 lg:top-[0.65rem]`} strokeWidth={2} />
         <textarea
           name="message"
-          rows={3}
+          rows={2}
           placeholder={fields.message.placeholder}
           aria-label={fields.message.placeholder}
-          className={`${base} h-28 resize-none pt-4 lg:h-[7.45rem] lg:pt-[0.95rem]`}
+          className={`${base} ${inputPadding} h-20 resize-none pt-2.5 lg:h-[5.25rem] lg:pt-[0.65rem]`}
         />
       </label>
       {submit.showMessage ? (
@@ -133,23 +135,23 @@ export const BookingForm = ({ data, serviceOptions }: { data: BookingData; servi
           visibleFor={submit.visibleFor}
           onClose={submit.dismiss}
           closeLabel={data.closeLabel}
-          className="mx-auto w-full max-w-[36.3rem] sm:col-span-2 lg:-mt-[0.2rem]"
+          className="mx-auto w-full max-w-[32rem] sm:col-span-2 lg:mt-[0.25rem]"
         />
       ) : (
         <button
           type="submit"
           disabled={submit.sending}
-          className={`${buttonClass} mx-auto mt-2 h-14 w-full max-w-[22rem] gap-3 rounded-xl text-[1.15rem] font-bold sm:col-span-2 lg:-mt-[0.2rem] lg:h-[5.875rem] lg:w-[36.3rem] lg:max-w-none lg:gap-[1.6rem] lg:rounded-[0.875rem] lg:text-[2.5rem]`}
+          className={`${buttonClass} mx-auto mt-2 h-11 w-full max-w-[15rem] gap-2 rounded-lg text-[0.95rem] font-bold sm:col-span-2 lg:mt-[0.5rem] lg:h-[3.6rem] lg:w-[18rem] lg:gap-[0.75rem] lg:rounded-[0.625rem] lg:text-[1.25rem]`}
         >
           {submit.sending ? (
             <>
-              <Spinner className="size-5 lg:size-[2.4rem]" />
+              <Spinner className="size-4 lg:size-[1.4rem]" />
               {data.sending}
             </>
           ) : (
             <>
               {data.button}
-              <Icon name="TbArrowNarrowRight" className={`${buttonArrow} size-7 lg:size-[3.4rem]`} strokeWidth={2.2} />
+              <Icon name="TbArrowNarrowRight" className={`${buttonArrow} size-5 lg:size-[1.6rem]`} strokeWidth={2.2} />
             </>
           )}
         </button>

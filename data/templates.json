@@ -111,7 +111,7 @@
         }
       ],
       "socialLabel": "Follow AutoPulse",
-      "copyrightText": "© {year} AutoPulse. All Rights Reserved."
+      "copyrightText": "© {year} AutoPulse. All Rights Reserved. Powered by Lestow."
     }
   },
   "categories": {
@@ -182,9 +182,8 @@
               "titleTop": "Complete Car Care\n& Repair Services for a",
               "titleAccent": "Smoother Drive",
               "description": "From routine maintenance to complex repairs,\nAutoPulse keeps your vehicle safe, reliable\nand road-ready.",
-              "image": "/images/hero-mechanic-car-v2.webp",
-              "imageDesktop": "/images/hero-mechanic-car-desktop.webp",
-              "imageAlt": "AutoPulse mechanic checking the engine of a grey car, with a tool chest, tyre, jack stand and parts trolley"
+              "image": "/images/hero-mechanic-car.png",
+              "imageAlt": "AutoPulse mechanic checking the engine of a grey car, with a red tool chest, tyre, jack stand and parts trolley"
             }
           }
         },
@@ -197,7 +196,7 @@
               "description": "At AutoPulse, we are passionate about keeping your vehicle in top\ncondition. With skilled technicians, modern tools, and a customer-first\napproach, we deliver reliable, high-quality car repair and maintenance\nservices you can trust.",
               "image": "/images/about-mechanic-v3.webp",
               "imageAlt": "Smiling AutoPulse technician with folded arms in the workshop",
-              "sideImage": "/images/about-engine-check-design.webp",
+              "sideImage": "/images/about-engine-check-v3.webp",
               "sideImageAlt": "Technician servicing the engine of a car",
               "experienceIcon": "ApCarGear",
               "experienceValue": "10+",
@@ -305,7 +304,6 @@
               "titleEnd": "Advantage",
               "description": "We go beyond just car repairs — we deliver trust, quality, and a hassle-free service experience.",
               "image": "/images/why-mechanic-car-v2.webp",
-              "imageDesktop": "/images/why-mechanic-car-desktop.webp",
               "imageAlt": "Smiling AutoPulse mechanic with folded arms in front of a grey car",
               "points": [
                 {
@@ -458,7 +456,6 @@
               "titleTop": "Find Answers To The Most\nCommon",
               "titleAccent": "Customer Queries",
               "image": "/images/faq-thinking-man-v2.webp",
-              "imageDesktop": "/images/faq-thinking-man-desktop.webp",
               "imageAlt": "Thoughtful man choosing between a row of cars",
               "items": [
                 {
@@ -499,7 +496,6 @@
               "titleAccent": "Support?",
               "description": "Reach out to our team for service booking,\nquick assistance, or any inquiries.",
               "image": "/images/contact-support-v2.webp",
-              "imageDesktop": "/images/contact-support-desktop-v2.webp",
               "imageAlt": "Smiling AutoPulse support agent with a headset at her desk"
             }
           }
@@ -519,7 +515,7 @@
                 },
                 "phone": {
                   "placeholder": "Phone Number *",
-                  "icon": "FaPhoneAlt"
+                  "icon": "TbPhone"
                 },
                 "email": {
                   "placeholder": "Email Address *",

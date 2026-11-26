@@ -16,9 +16,9 @@ const Point = ({ point, index }: { point: WhyPoint; index: number }) => (
     </span>
     <span aria-hidden="true" className="ml-4 w-px shrink-0 self-stretch bg-[var(--color-divider)] lg:my-[1.9rem] lg:ml-[1.125rem] lg:w-[0.1rem]" />
     <div className="ml-4 min-w-0 lg:ml-[1.25rem] lg:pr-[0.75rem]">
-      <h3 className="font-sans text-[1.15rem] font-extrabold leading-tight tracking-[-0.02em] text-[var(--color-ink)] lg:whitespace-nowrap lg:text-[1.85rem] lg:leading-none lg:tracking-[-0.05em]">{point.title}</h3>
+      <h3 className="font-sans text-[1.15rem] font-extrabold leading-tight tracking-[-0.02em] text-[var(--color-ink)] lg:whitespace-nowrap lg:text-[1.7rem] lg:leading-none lg:tracking-[-0.04em]">{point.title}</h3>
       {/* the design's line breaks (\n in the JSON) are kept from 1024px up */}
-      <p className="mt-1.5 font-sans text-[0.95rem] font-medium leading-[1.5] text-[var(--color-text)] lg:mt-[0.75rem] lg:whitespace-pre lg:text-[1.27rem] lg:leading-[1.94rem] lg:tracking-[-0.015em]">{point.text}</p>
+      <p className="mt-1.5 font-sans text-[0.95rem] font-medium leading-[1.5] text-[var(--color-text)] lg:mt-[0.75rem] lg:whitespace-pre lg:text-[1.25rem] lg:leading-[1.85rem] lg:tracking-[-0.015em]">{point.text}</p>
     </div>
   </li>
 );
@@ -39,14 +39,12 @@ export const WhySection = ({ data }: { data?: WhyData }) => {
       <div data-reveal className={`text-center ${sidePadding} lg:px-0`}>
         <Eyebrow
           label={data.label}
-          className={`justify-center ${labelSize} lg:text-[2.17rem]`}
-          lineClassName="h-[0.15rem] w-10 sm:w-12 lg:h-[0.19rem] lg:w-[3.125rem]"
-          gapClassName="gap-4 lg:gap-[1.9rem]"
+          className={`justify-center ${labelSize}`}
         />
-        <h2 className={`mt-3 font-heading font-extrabold tracking-[-0.01em] text-[var(--color-ink)] ${titleSize} lg:mt-[0.66rem] lg:text-[3.72rem] lg:leading-none`}>
+        <h2 className={`mt-3 font-heading font-extrabold tracking-[-0.01em] text-[var(--color-ink)] ${titleSize} lg:mt-[0.75rem]`}>
           <TitleWords data={data} />
         </h2>
-        <p className={`mx-auto mt-4 max-w-[40rem] font-sans font-medium text-[var(--color-text)] ${introSize} lg:mt-[1.49rem] lg:max-w-none lg:text-[1.534rem] lg:leading-none`}>
+        <p className={`mx-auto mt-4 max-w-[40rem] font-sans font-medium text-[var(--color-text)] ${introSize} lg:mt-[1rem] lg:max-w-none`}>
           {data.description}
         </p>
       </div>
@@ -58,15 +56,9 @@ export const WhySection = ({ data }: { data?: WhyData }) => {
           ))}
         </ul>
         <div data-reveal className="relative mx-auto my-4 aspect-[984/894] w-full max-w-[28rem] lg:mx-0 lg:my-0 lg:aspect-auto lg:h-[46.25rem] lg:w-[42.8rem] lg:max-w-none lg:shrink-0">
-          {/* phones and tablets: the orange half circle behind the mechanic (its ends disappear behind the car) and the photo */}
-          <div className="absolute inset-0 lg:hidden">
-            <span aria-hidden="true" className="absolute left-1/2 top-[9%] aspect-[2/1] w-[87%] -translate-x-1/2 rounded-t-full border-[0.25rem] border-b-0 border-[var(--color-orange)]" />
-            <Image src={data.image} alt={data.imageAlt} fill quality={90} sizes="28rem" className="object-contain object-bottom" />
-          </div>
-          {/* 1024px up: the design's own photo with its arc, standing on the section's bottom edge */}
-          <div className="absolute bottom-0 left-[0.31rem] hidden h-full w-[41.625rem] lg:block">
-            <Image src={data.imageDesktop} alt={data.imageAlt} fill quality={90} sizes="35vw" className="object-cover" />
-          </div>
+          {/* orange half circle behind the mechanic (its ends disappear behind the car) and the clean cutout photo */}
+          <span aria-hidden="true" className="absolute left-1/2 top-[9%] aspect-[2/1] w-[87%] -translate-x-1/2 rounded-t-full border-[0.25rem] border-b-0 border-[var(--color-orange)] lg:border-[0.35rem] lg:border-b-0" />
+          <Image src={data.image} alt={data.imageAlt} fill quality={90} sizes="(min-width: 1024px) 35vw, 28rem" className="object-contain object-bottom" />
         </div>
         <ul className={columnClass}>
           {data.points.slice(half).map((point, index) => (

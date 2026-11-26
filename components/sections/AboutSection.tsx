@@ -43,15 +43,13 @@ export const AboutSection = ({ data }: { data?: AboutData }) => {
             <Eyebrow
               label={data.label}
               lines="before"
-              className={`${labelSize} lg:text-[1.8rem]`}
-              lineClassName="h-[0.25rem] w-10 sm:w-12 lg:h-[0.375rem] lg:w-[3.19rem]"
-              gapClassName="gap-4 lg:gap-[1.3rem]"
+              className={labelSize}
             />
             {/* the design's line breaks (\n in the JSON) are kept from 640px up */}
-            <h2 className={`mt-4 font-heading font-extrabold tracking-[-0.01em] text-[var(--color-ink)] sm:whitespace-pre-line ${titleSize} lg:mt-[0.63rem] lg:text-[3.42rem] lg:leading-[4.19rem] lg:tracking-[-0.016em]`}>
+            <h2 className={`mt-4 font-heading font-extrabold tracking-[-0.01em] text-[var(--color-ink)] sm:whitespace-pre-line ${titleSize} lg:mt-[0.63rem] lg:leading-[4.15rem] lg:tracking-[-0.016em]`}>
               {data.title}
             </h2>
-            <p className="mt-5 font-sans text-base font-medium leading-[1.65] text-[var(--color-text)] sm:text-lg lg:mt-[1.08rem] lg:whitespace-pre-line lg:text-[1.5rem] lg:leading-[2.22rem]">
+            <p className="mt-5 font-sans text-base font-medium leading-[1.65] text-[var(--color-text)] sm:text-lg lg:mt-[1.08rem] lg:whitespace-pre-line lg:text-[1.45rem] lg:leading-[2.15rem]">
               {data.description}
             </p>
           </div>

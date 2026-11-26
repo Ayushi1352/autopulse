@@ -12,14 +12,12 @@ export const TestimonialsSection = ({ data }: { data?: TestimonialsData }) => {
       <div data-reveal className={`text-center ${sidePadding} lg:px-0`}>
         <Eyebrow
           label={data.label}
-          className={`justify-center ${labelSize} lg:text-[2.5rem]`}
-          lineClassName="h-[0.15rem] w-10 sm:w-14 lg:h-[0.19rem] lg:w-[5.3rem]"
-          gapClassName="gap-4 lg:gap-[1.5rem]"
+          className={`justify-center ${labelSize}`}
         />
-        <h2 className={`mt-3 font-heading font-extrabold tracking-[-0.01em] text-[var(--color-ink)] ${titleSize} lg:mt-[1.25rem] lg:text-[4rem] lg:leading-none`}>
+        <h2 className={`mt-3 font-heading font-extrabold tracking-[-0.01em] text-[var(--color-ink)] ${titleSize} lg:mt-[1rem]`}>
           <TitleWords data={data} />
         </h2>
-        <p className={`mx-auto mt-4 max-w-[40rem] font-sans text-[var(--color-text-soft)] ${introSize} lg:mt-[1.4rem] lg:max-w-none lg:text-[1.6rem] lg:font-medium lg:leading-none`}>
+        <p className={`mx-auto mt-4 max-w-[40rem] font-sans text-[var(--color-text-soft)] ${introSize} lg:mt-[1rem] lg:max-w-none lg:font-medium`}>
           {data.description}
         </p>
       </div>

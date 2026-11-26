@@ -37,7 +37,7 @@ export const AboutTabs = ({ label, tabs }: { label: string; tabs: AboutTab[] }) 
               tabIndex={selected ? 0 : -1}
               onClick={() => setActive(tab.id)}
               onKeyDown={(event) => onKeyDown(event, index)}
-              className={`flex h-14 flex-1 items-center justify-center gap-2.5 rounded-t-xl border-[0.1rem] border-b-0 font-heading text-[1.05rem] font-bold transition-colors duration-300 sm:flex-none sm:px-8 lg:h-[4.5rem] lg:w-[20.625rem] lg:gap-[1rem] lg:rounded-t-[0.75rem] lg:px-0 lg:text-[1.575rem] lg:font-extrabold ${
+              className={`flex h-14 flex-1 items-center justify-center gap-2.5 rounded-t-xl border-[0.1rem] border-b-0 font-heading text-[1.05rem] font-bold transition-colors duration-300 sm:flex-none sm:px-8 lg:h-[4.5rem] lg:w-[20.625rem] lg:gap-[1rem] lg:rounded-t-[0.75rem] lg:px-0 lg:text-[1.45rem] lg:font-extrabold ${
                 selected
                   ? "border-[var(--color-orange)] bg-[var(--color-orange)] text-[var(--color-white)]"
                   : "border-[var(--color-border-tab)] bg-[var(--color-white)] text-[var(--color-ink)] hover:text-[var(--color-orange)]"
@@ -63,9 +63,9 @@ export const AboutTabs = ({ label, tabs }: { label: string; tabs: AboutTab[] }) 
           </span>
           <span aria-hidden="true" className="hidden w-px shrink-0 self-stretch bg-[var(--color-divider)] sm:block lg:mx-[1.94rem] lg:my-[3.3rem]" />
           <div className="min-w-0 transition-[opacity,transform] duration-500 starting:translate-y-2 starting:opacity-0 lg:mt-[0.625rem]">
-            <h3 className="font-heading text-[1.3rem] font-extrabold leading-tight text-[var(--color-ink)] lg:text-[1.91rem] lg:leading-none">{current.title}</h3>
+            <h3 className="font-heading text-[1.3rem] font-extrabold leading-tight text-[var(--color-ink)] lg:text-[1.75rem] lg:leading-none">{current.title}</h3>
             {/* the design's line breaks (\n in the JSON) are kept from 1024px up */}
-            <p className="mt-2 font-sans text-[0.95rem] font-medium leading-[1.55] text-[var(--color-text-soft)] sm:text-base lg:mt-[0.9rem] lg:whitespace-pre-line lg:text-[1.27rem] lg:leading-[1.875rem]">
+            <p className="mt-2 font-sans text-[0.95rem] font-medium leading-[1.55] text-[var(--color-text-soft)] sm:text-base lg:mt-[0.9rem] lg:whitespace-pre-line lg:text-[1.25rem] lg:leading-[1.85rem]">
               {current.text}
             </p>
           </div>

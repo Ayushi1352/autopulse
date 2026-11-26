@@ -13,15 +13,13 @@ export const ServicesSection = ({ data }: { data?: ServicesData }) => {
       <div data-reveal className={`text-center ${sidePadding} lg:px-0`}>
         <Eyebrow
           label={data.label}
-          className={`justify-center ${labelSize} lg:text-[1.9rem]`}
-          lineClassName="h-[0.15rem] w-10 sm:w-12 lg:h-[0.19rem] lg:w-[2.94rem]"
-          gapClassName="gap-4 lg:gap-[2rem]"
+          className={`justify-center ${labelSize}`}
         />
-        <h2 className={`mt-3 font-heading font-extrabold tracking-[-0.01em] text-[var(--color-ink)] ${titleSize} lg:mt-[1.025rem] lg:text-[3.35rem] lg:leading-none`}>
+        <h2 className={`mt-3 font-heading font-extrabold tracking-[-0.01em] text-[var(--color-ink)] ${titleSize} lg:mt-[0.9rem]`}>
           {data.title}
         </h2>
         {/* the design's line breaks (\n in the JSON) are kept from 1024px up */}
-        <p className={`mx-auto mt-4 max-w-[40rem] font-sans text-[var(--color-text-soft)] ${introSize} lg:mt-[0.3rem] lg:max-w-none lg:whitespace-pre-line lg:text-[1.44rem] lg:font-medium lg:leading-[2.5rem]`}>
+        <p className={`mx-auto mt-4 max-w-[40rem] font-sans text-[var(--color-text-soft)] ${introSize} lg:mt-[0.65rem] lg:max-w-none lg:whitespace-pre-line lg:font-medium`}>
           {data.description}
         </p>
       </div>

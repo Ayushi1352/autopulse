@@ -13,23 +13,22 @@ type Props = {
 /** Orange car between two navy lines, the centred title and text, then the booking form; the footer follows after the whole gap between sections */
 export const BookingSection = ({ data, serviceOptions }: Props) => {
   if (!data) return null;
-  const line = <span aria-hidden="true" className="h-[0.2rem] w-12 shrink-0 bg-[var(--color-navy)] sm:w-16 lg:h-[0.25rem] lg:w-[6.7rem]" />;
+  const line = <span aria-hidden="true" className="h-[0.15rem] w-10 shrink-0 bg-[var(--color-navy)] sm:w-14 lg:h-[0.2rem] lg:w-[4.75rem]" />;
 
   return (
     <section id={data.id} className={`bg-[var(--color-bg-main)] ${scrollMargin} ${sectionSpaceTop} ${sectionGapBottom}`}>
-      <div className={`${sidePadding} lg:px-[5.94rem]`}>
-        <div className="mx-auto max-w-[44rem] px-1 sm:px-6 lg:max-w-none lg:px-0 lg:pl-[4.19rem] lg:pr-[3.56rem]">
-          {/* the design centres this heading 20px left of the form's middle */}
-          <div data-reveal className="text-center lg:pr-[2.5rem]">
-            <div className="flex items-center justify-center gap-4 text-[var(--color-orange)] lg:gap-0">
+      <div className={`${sidePadding} lg:px-[2rem]`}>
+        <div className="mx-auto w-full max-w-[44rem] px-1 sm:px-6 lg:max-w-[70rem] lg:px-0">
+          <div data-reveal className="text-center">
+            <div className="flex items-center justify-center gap-3 text-[var(--color-orange)] lg:gap-0">
               {line}
-              <Icon name={data.icon} className="h-12 w-28 sm:h-14 sm:w-32 lg:mx-[3.3rem] lg:h-[4.25rem] lg:w-[10.3rem]" />
+              <Icon name={data.icon} className="h-9 w-20 sm:h-11 sm:w-24 lg:mx-[1.75rem] lg:h-[2.85rem] lg:w-[6.75rem]" />
               {line}
             </div>
-            <h2 className={`mt-2 font-heading font-extrabold tracking-[-0.01em] text-[var(--color-ink)] ${titleSize} lg:-mt-[0.4rem] lg:text-[4.1rem] lg:leading-none`}>
+            <h2 className={`mt-2 font-heading font-extrabold tracking-[-0.01em] text-[var(--color-ink)] ${titleSize} lg:mt-[0.4rem]`}>
               <TitleWords data={data} />
             </h2>
-            <p className={`mx-auto mt-4 max-w-[36rem] font-display text-[var(--color-text-soft)] ${introSize} lg:mt-[1.6rem] lg:max-w-none lg:text-[1.66rem] lg:leading-none`}>
+            <p className={`mx-auto mt-3 max-w-[36rem] font-display text-[var(--color-text-soft)] ${introSize} lg:mt-[0.9rem] lg:max-w-none`}>
               {data.description}
             </p>
           </div>

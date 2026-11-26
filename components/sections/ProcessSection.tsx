@@ -51,12 +51,10 @@ export const ProcessSection = ({ data }: { data?: ProcessData }) => {
         <div data-reveal className={`relative text-center ${sidePadding} lg:px-0`}>
           <Eyebrow
             label={data.label}
-            className={`justify-center ${labelSize} lg:text-[2rem]`}
-            lineClassName="h-[0.2rem] w-10 sm:w-12 lg:h-[0.25rem] lg:w-[3.44rem]"
-            gapClassName="gap-4 lg:gap-[1.25rem]"
+            className={`justify-center ${labelSize}`}
           />
-          <h2 className={`mt-3 font-heading font-extrabold tracking-[-0.01em] text-[var(--color-white)] ${titleSize} lg:mt-[1.35rem] lg:text-[3.73rem] lg:leading-none`}>{data.title}</h2>
-          <p className={`mx-auto mt-4 max-w-[40rem] font-sans text-[var(--color-white)] ${introSize} lg:mt-[0.85rem] lg:max-w-none lg:text-[1.8rem] lg:font-medium lg:leading-none`}>{data.description}</p>
+          <h2 className={`mt-3 font-heading font-extrabold tracking-[-0.01em] text-[var(--color-white)] ${titleSize} lg:mt-[0.9rem]`}>{data.title}</h2>
+          <p className={`mx-auto mt-4 max-w-[40rem] font-sans text-[var(--color-white)] ${introSize} lg:mt-[0.9rem] lg:max-w-none lg:font-medium`}>{data.description}</p>
         </div>
 
         <ol className={`relative mx-auto mt-12 grid max-w-[44rem] gap-8 ${sidePadding} sm:gap-10 lg:mt-[3.31rem] lg:flex lg:max-w-none lg:items-center lg:gap-0 lg:pl-[3.31rem] lg:pr-0`}>

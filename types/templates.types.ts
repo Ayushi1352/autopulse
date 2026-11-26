@@ -88,8 +88,6 @@ export interface HeroData extends SplitTitle {
   /** "\n" starts a new line (kept from 1024px up) */
   description: string;
   image: string;
-  /** from 1024px up: the design's own photo, cut to the hero's right part (its navy and white background included) */
-  imageDesktop: string;
   imageAlt: string;
 }
 
@@ -167,8 +165,6 @@ export interface WhyData extends SplitTitle {
   label: string;
   description: string;
   image: string;
-  /** from 1024px up: the design's own photo with the orange arc (666 × 740 of the 1920px design) */
-  imageDesktop: string;
   imageAlt: string;
   /** the first half is shown on the left of the photo, the rest on the right */
   points: WhyPoint[];
@@ -236,8 +232,6 @@ export interface FaqData extends SplitTitle {
   id: string;
   label: string;
   image: string;
-  /** from 1024px up: the design's own drawing (the man, question marks, arcs and cars; 905 × 870 of the 1920px design) */
-  imageDesktop: string;
   imageAlt: string;
   items: FaqItem[];
 }
@@ -248,8 +242,6 @@ export interface ContactData extends SplitTitle {
   /** "\n" starts a new line (kept from 1024px up) */
   description: string;
   image: string;
-  /** from 1024px up: the design's own photo with the orange arc (the card's right part, 894 × 899 of the 1920px design) */
-  imageDesktop: string;
   imageAlt: string;
 }
 
